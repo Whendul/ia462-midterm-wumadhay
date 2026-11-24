@@ -1,0 +1,5 @@
+uid=999(appuser) gid=999(appgroup) groups=999(appgroup)
+GET /: 200
+HEAD /: 200
+GET /missing: 404
+Runtime tests passed.

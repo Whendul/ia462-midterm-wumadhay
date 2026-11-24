@@ -1,0 +1,1192 @@
+[
+  {
+    "Id": 4688,
+    "Version": 2,
+    "Qualifiers": null,
+    "Level": 0,
+    "Task": 13312,
+    "Opcode": 0,
+    "Keywords": -9214364837600034816,
+    "RecordId": 571764,
+    "ProviderName": "Microsoft-Windows-Security-Auditing",
+    "ProviderId": "54849625-5478-4994-a5ba-3e3b0328c30d",
+    "LogName": "Security",
+    "ProcessId": 4,
+    "ThreadId": 19884,
+    "MachineName": "[REDACTED_HOST]",
+    "UserId": null,
+    "TimeCreated": "/Date(1795471292392)/",
+    "ActivityId": null,
+    "RelatedActivityId": null,
+    "ContainerLog": "Security",
+    "MatchedQueryIds": [
+      0
+    ],
+    "Bookmark": {},
+    "LevelDisplayName": "Information",
+    "OpcodeDisplayName": "Info",
+    "TaskDisplayName": "Process Creation",
+    "KeywordsDisplayNames": [
+      "Audit Success"
+    ],
+    "Properties": [
+      {
+        "Value": {
+          "BinaryLength": 28,
+          "AccountDomainSid": {
+            "BinaryLength": 24,
+            "AccountDomainSid": "[REDACTED_ACCOUNT_SID_005]",
+            "Value": "[REDACTED_ACCOUNT_SID_005]"
+          },
+          "Value": "[REDACTED_ACCOUNT_SID_004]"
+        }
+      },
+      {
+        "Value": "[REDACTED_USER]"
+      },
+      {
+        "Value": "[REDACTED_HOST]"
+      },
+      {
+        "Value": 691820
+      },
+      {
+        "Value": 20840
+      },
+      {
+        "Value": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+      },
+      {
+        "Value": "%%1937"
+      },
+      {
+        "Value": 21520
+      },
+      {
+        "Value": "\"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -Command \"Write-Output 'IA462 midterm logging test'\""
+      },
+      {
+        "Value": {
+          "BinaryLength": 12,
+          "AccountDomainSid": null,
+          "Value": "S-1-0-0"
+        }
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": 0
+      },
+      {
+        "Value": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+      },
+      {
+        "Value": {
+          "BinaryLength": 12,
+          "AccountDomainSid": null,
+          "Value": "S-1-16-12288"
+        }
+      }
+    ],
+    "Message": "A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\t[REDACTED_ACCOUNT_SID_004]\r\n\tAccount Name:\t\t[REDACTED_USER]\r\n\tAccount Domain:\t\t[REDACTED_HOST]\r\n\tLogon ID:\t\t0xA8E6C\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-0-0\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0x5168\r\n\tNew Process Name:\tC:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\n\tToken Elevation Type:\tTokenElevationTypeFull (2)\r\n\tMandatory Label:\t\tS-1-16-12288\r\n\tCreator Process ID:\t0x5410\r\n\tCreator Process Name:\tC:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\n\tProcess Command Line:\t\"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -Command \"Write-Output 'IA462 midterm logging test'\"\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator."
+  },
+  {
+    "Id": 4688,
+    "Version": 2,
+    "Qualifiers": null,
+    "Level": 0,
+    "Task": 13312,
+    "Opcode": 0,
+    "Keywords": -9214364837600034816,
+    "RecordId": 571762,
+    "ProviderName": "Microsoft-Windows-Security-Auditing",
+    "ProviderId": "54849625-5478-4994-a5ba-3e3b0328c30d",
+    "LogName": "Security",
+    "ProcessId": 4,
+    "ThreadId": 8128,
+    "MachineName": "[REDACTED_HOST]",
+    "UserId": null,
+    "TimeCreated": "/Date(1795471241670)/",
+    "ActivityId": null,
+    "RelatedActivityId": null,
+    "ContainerLog": "Security",
+    "MatchedQueryIds": [
+      0
+    ],
+    "Bookmark": {},
+    "LevelDisplayName": "Information",
+    "OpcodeDisplayName": "Info",
+    "TaskDisplayName": "Process Creation",
+    "KeywordsDisplayNames": [
+      "Audit Success"
+    ],
+    "Properties": [
+      {
+        "Value": {
+          "BinaryLength": 28,
+          "AccountDomainSid": {
+            "BinaryLength": 24,
+            "AccountDomainSid": "[REDACTED_ACCOUNT_SID_005]",
+            "Value": "[REDACTED_ACCOUNT_SID_005]"
+          },
+          "Value": "[REDACTED_ACCOUNT_SID_006]"
+        }
+      },
+      {
+        "Value": "ia462midterm"
+      },
+      {
+        "Value": "[REDACTED_HOST]"
+      },
+      {
+        "Value": 3589559628
+      },
+      {
+        "Value": 8936
+      },
+      {
+        "Value": "C:\\Windows\\System32\\whoami.exe"
+      },
+      {
+        "Value": "%%1936"
+      },
+      {
+        "Value": 19152
+      },
+      {
+        "Value": "whoami"
+      },
+      {
+        "Value": {
+          "BinaryLength": 12,
+          "AccountDomainSid": null,
+          "Value": "S-1-0-0"
+        }
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": 0
+      },
+      {
+        "Value": "C:\\Windows\\System32\\cmd.exe"
+      },
+      {
+        "Value": {
+          "BinaryLength": 12,
+          "AccountDomainSid": null,
+          "Value": "S-1-16-8192"
+        }
+      }
+    ],
+    "Message": "A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\t[REDACTED_ACCOUNT_SID_006]\r\n\tAccount Name:\t\tia462midterm\r\n\tAccount Domain:\t\t[REDACTED_HOST]\r\n\tLogon ID:\t\t0xD5F4554C\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-0-0\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0x22e8\r\n\tNew Process Name:\tC:\\Windows\\System32\\whoami.exe\r\n\tToken Elevation Type:\tTokenElevationTypeDefault (1)\r\n\tMandatory Label:\t\tS-1-16-8192\r\n\tCreator Process ID:\t0x4ad0\r\n\tCreator Process Name:\tC:\\Windows\\System32\\cmd.exe\r\n\tProcess Command Line:\twhoami\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator."
+  },
+  {
+    "Id": 4688,
+    "Version": 2,
+    "Qualifiers": null,
+    "Level": 0,
+    "Task": 13312,
+    "Opcode": 0,
+    "Keywords": -9214364837600034816,
+    "RecordId": 571761,
+    "ProviderName": "Microsoft-Windows-Security-Auditing",
+    "ProviderId": "54849625-5478-4994-a5ba-3e3b0328c30d",
+    "LogName": "Security",
+    "ProcessId": 4,
+    "ThreadId": 22032,
+    "MachineName": "[REDACTED_HOST]",
+    "UserId": null,
+    "TimeCreated": "/Date(1795471241595)/",
+    "ActivityId": null,
+    "RelatedActivityId": null,
+    "ContainerLog": "Security",
+    "MatchedQueryIds": [
+      0
+    ],
+    "Bookmark": {},
+    "LevelDisplayName": "Information",
+    "OpcodeDisplayName": "Info",
+    "TaskDisplayName": "Process Creation",
+    "KeywordsDisplayNames": [
+      "Audit Success"
+    ],
+    "Properties": [
+      {
+        "Value": {
+          "BinaryLength": 28,
+          "AccountDomainSid": {
+            "BinaryLength": 24,
+            "AccountDomainSid": "[REDACTED_ACCOUNT_SID_005]",
+            "Value": "[REDACTED_ACCOUNT_SID_005]"
+          },
+          "Value": "[REDACTED_ACCOUNT_SID_006]"
+        }
+      },
+      {
+        "Value": "ia462midterm"
+      },
+      {
+        "Value": "[REDACTED_HOST]"
+      },
+      {
+        "Value": 3589559628
+      },
+      {
+        "Value": 15476
+      },
+      {
+        "Value": "C:\\Windows\\System32\\conhost.exe"
+      },
+      {
+        "Value": "%%1936"
+      },
+      {
+        "Value": 19152
+      },
+      {
+        "Value": "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1"
+      },
+      {
+        "Value": {
+          "BinaryLength": 12,
+          "AccountDomainSid": null,
+          "Value": "S-1-0-0"
+        }
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": 0
+      },
+      {
+        "Value": "C:\\Windows\\System32\\cmd.exe"
+      },
+      {
+        "Value": {
+          "BinaryLength": 12,
+          "AccountDomainSid": null,
+          "Value": "S-1-16-8192"
+        }
+      }
+    ],
+    "Message": "A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\t[REDACTED_ACCOUNT_SID_006]\r\n\tAccount Name:\t\tia462midterm\r\n\tAccount Domain:\t\t[REDACTED_HOST]\r\n\tLogon ID:\t\t0xD5F4554C\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-0-0\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0x3c74\r\n\tNew Process Name:\tC:\\Windows\\System32\\conhost.exe\r\n\tToken Elevation Type:\tTokenElevationTypeDefault (1)\r\n\tMandatory Label:\t\tS-1-16-8192\r\n\tCreator Process ID:\t0x4ad0\r\n\tCreator Process Name:\tC:\\Windows\\System32\\cmd.exe\r\n\tProcess Command Line:\t\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator."
+  },
+  {
+    "Id": 4688,
+    "Version": 2,
+    "Qualifiers": null,
+    "Level": 0,
+    "Task": 13312,
+    "Opcode": 0,
+    "Keywords": -9214364837600034816,
+    "RecordId": 571760,
+    "ProviderName": "Microsoft-Windows-Security-Auditing",
+    "ProviderId": "54849625-5478-4994-a5ba-3e3b0328c30d",
+    "LogName": "Security",
+    "ProcessId": 4,
+    "ThreadId": 22032,
+    "MachineName": "[REDACTED_HOST]",
+    "UserId": null,
+    "TimeCreated": "/Date(1795471241571)/",
+    "ActivityId": null,
+    "RelatedActivityId": null,
+    "ContainerLog": "Security",
+    "MatchedQueryIds": [
+      0
+    ],
+    "Bookmark": {},
+    "LevelDisplayName": "Information",
+    "OpcodeDisplayName": "Info",
+    "TaskDisplayName": "Process Creation",
+    "KeywordsDisplayNames": [
+      "Audit Success"
+    ],
+    "Properties": [
+      {
+        "Value": {
+          "BinaryLength": 12,
+          "AccountDomainSid": null,
+          "Value": "S-1-5-18"
+        }
+      },
+      {
+        "Value": "[REDACTED_HOST]$"
+      },
+      {
+        "Value": "WORKGROUP"
+      },
+      {
+        "Value": 999
+      },
+      {
+        "Value": 19152
+      },
+      {
+        "Value": "C:\\Windows\\System32\\cmd.exe"
+      },
+      {
+        "Value": "%%1936"
+      },
+      {
+        "Value": 4568
+      },
+      {
+        "Value": "cmd.exe /k whoami"
+      },
+      {
+        "Value": {
+          "BinaryLength": 12,
+          "AccountDomainSid": null,
+          "Value": "S-1-0-0"
+        }
+      },
+      {
+        "Value": "ia462midterm"
+      },
+      {
+        "Value": "[REDACTED_HOST]"
+      },
+      {
+        "Value": 3589559628
+      },
+      {
+        "Value": "C:\\Windows\\System32\\runas.exe"
+      },
+      {
+        "Value": {
+          "BinaryLength": 12,
+          "AccountDomainSid": null,
+          "Value": "S-1-16-8192"
+        }
+      }
+    ],
+    "Message": "A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\t[REDACTED_HOST]$\r\n\tAccount Domain:\t\tWORKGROUP\r\n\tLogon ID:\t\t0x3E7\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-0-0\r\n\tAccount Name:\t\tia462midterm\r\n\tAccount Domain:\t\t[REDACTED_HOST]\r\n\tLogon ID:\t\t0xD5F4554C\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0x4ad0\r\n\tNew Process Name:\tC:\\Windows\\System32\\cmd.exe\r\n\tToken Elevation Type:\tTokenElevationTypeDefault (1)\r\n\tMandatory Label:\t\tS-1-16-8192\r\n\tCreator Process ID:\t0x11d8\r\n\tCreator Process Name:\tC:\\Windows\\System32\\runas.exe\r\n\tProcess Command Line:\tcmd.exe /k whoami\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator."
+  },
+  {
+    "Id": 4624,
+    "Version": 3,
+    "Qualifiers": null,
+    "Level": 0,
+    "Task": 12544,
+    "Opcode": 0,
+    "Keywords": -9214364837600034816,
+    "RecordId": 571759,
+    "ProviderName": "Microsoft-Windows-Security-Auditing",
+    "ProviderId": "54849625-5478-4994-a5ba-3e3b0328c30d",
+    "LogName": "Security",
+    "ProcessId": 1476,
+    "ThreadId": 1584,
+    "MachineName": "[REDACTED_HOST]",
+    "UserId": null,
+    "TimeCreated": "/Date(1795471241565)/",
+    "ActivityId": "d83e6e49-6fe7-0004-916e-3ed8e76fdd01",
+    "RelatedActivityId": null,
+    "ContainerLog": "Security",
+    "MatchedQueryIds": [
+      0
+    ],
+    "Bookmark": {},
+    "LevelDisplayName": "Information",
+    "OpcodeDisplayName": "Info",
+    "TaskDisplayName": "Process Creation",
+    "KeywordsDisplayNames": [
+      "Audit Success"
+    ],
+    "Properties": [
+      {
+        "Value": {
+          "BinaryLength": 28,
+          "AccountDomainSid": {
+            "BinaryLength": 24,
+            "AccountDomainSid": "[REDACTED_ACCOUNT_SID_005]",
+            "Value": "[REDACTED_ACCOUNT_SID_005]"
+          },
+          "Value": "[REDACTED_ACCOUNT_SID_004]"
+        }
+      },
+      {
+        "Value": "[REDACTED_USER]"
+      },
+      {
+        "Value": "[REDACTED_HOST]"
+      },
+      {
+        "Value": 691820
+      },
+      {
+        "Value": {
+          "BinaryLength": 28,
+          "AccountDomainSid": {
+            "BinaryLength": 24,
+            "AccountDomainSid": "[REDACTED_ACCOUNT_SID_005]",
+            "Value": "[REDACTED_ACCOUNT_SID_005]"
+          },
+          "Value": "[REDACTED_ACCOUNT_SID_006]"
+        }
+      },
+      {
+        "Value": "ia462midterm"
+      },
+      {
+        "Value": "[REDACTED_HOST]"
+      },
+      {
+        "Value": 3589559628
+      },
+      {
+        "Value": 2
+      },
+      {
+        "Value": "seclogo"
+      },
+      {
+        "Value": "Negotiate"
+      },
+      {
+        "Value": "[REDACTED_HOST]"
+      },
+      {
+        "Value": "00000000-0000-0000-0000-000000000000"
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": 0
+      },
+      {
+        "Value": 20892
+      },
+      {
+        "Value": "C:\\Windows\\System32\\svchost.exe"
+      },
+      {
+        "Value": "::1"
+      },
+      {
+        "Value": "0"
+      },
+      {
+        "Value": "%%1833"
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": "%%1843"
+      },
+      {
+        "Value": 0
+      },
+      {
+        "Value": "%%1843"
+      }
+    ],
+    "Message": "An account was successfully logged on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\t[REDACTED_ACCOUNT_SID_004]\r\n\tAccount Name:\t\t[REDACTED_USER]\r\n\tAccount Domain:\t\t[REDACTED_HOST]\r\n\tLogon ID:\t\t0xA8E6C\r\n\r\nLogon Information:\r\n\tLogon Type:\t\t2\r\n\tRestricted Admin Mode:\t-\r\n\tRemote Credential Guard:\t-\r\n\tVirtual Account:\t\tNo\r\n\tElevated Token:\t\tNo\r\n\r\nImpersonation Level:\t\tImpersonation\r\n\r\nNew Logon:\r\n\tSecurity ID:\t\t[REDACTED_ACCOUNT_SID_006]\r\n\tAccount Name:\t\tia462midterm\r\n\tAccount Domain:\t\t[REDACTED_HOST]\r\n\tLogon ID:\t\t0xD5F4554C\r\n\tLinked Logon ID:\t\t0x0\r\n\tNetwork Account Name:\t-\r\n\tNetwork Account Domain:\t-\r\n\tLogon GUID:\t\t{00000000-0000-0000-0000-000000000000}\r\n\r\nProcess Information:\r\n\tProcess ID:\t\t0x519c\r\n\tProcess Name:\t\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\t[REDACTED_HOST]\r\n\tSource Network Address:\t::1\r\n\tSource Port:\t\t0\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tseclogo\r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon session is created. It is generated on the computer that was accessed.\r\n\r\nThe subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.\r\n\r\nThe logon type field indicates the kind of logon that occurred. The most common types are 2 (interactive) and 3 (network).\r\n\r\nThe New Logon fields indicate the account for whom the new logon was created, i.e. the account that was logged on.\r\n\r\nThe network fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases.\r\n\r\nThe impersonation level field indicates the extent to which a process in the logon session can impersonate.\r\n\r\nThe authentication information fields provide detailed information about this specific logon request.\r\n\t- Logon GUID is a unique identifier that can be used to correlate this event with a KDC event.\r\n\t- Transited services indicate which intermediate services have participated in this logon request.\r\n\t- Package name indicates which sub-protocol was used among the NTLM protocols.\r\n\t- Key length indicates the length of the generated session key. This will be 0 if no session key was requested."
+  },
+  {
+    "Id": 4688,
+    "Version": 2,
+    "Qualifiers": null,
+    "Level": 0,
+    "Task": 13312,
+    "Opcode": 0,
+    "Keywords": -9214364837600034816,
+    "RecordId": 571755,
+    "ProviderName": "Microsoft-Windows-Security-Auditing",
+    "ProviderId": "54849625-5478-4994-a5ba-3e3b0328c30d",
+    "LogName": "Security",
+    "ProcessId": 4,
+    "ThreadId": 19628,
+    "MachineName": "[REDACTED_HOST]",
+    "UserId": null,
+    "TimeCreated": "/Date(1795471240615)/",
+    "ActivityId": null,
+    "RelatedActivityId": null,
+    "ContainerLog": "Security",
+    "MatchedQueryIds": [
+      0
+    ],
+    "Bookmark": {},
+    "LevelDisplayName": "Information",
+    "OpcodeDisplayName": "Info",
+    "TaskDisplayName": "Process Creation",
+    "KeywordsDisplayNames": [
+      "Audit Success"
+    ],
+    "Properties": [
+      {
+        "Value": {
+          "BinaryLength": 28,
+          "AccountDomainSid": {
+            "BinaryLength": 24,
+            "AccountDomainSid": "[REDACTED_ACCOUNT_SID_005]",
+            "Value": "[REDACTED_ACCOUNT_SID_005]"
+          },
+          "Value": "[REDACTED_ACCOUNT_SID_004]"
+        }
+      },
+      {
+        "Value": "[REDACTED_USER]"
+      },
+      {
+        "Value": "[REDACTED_HOST]"
+      },
+      {
+        "Value": 691820
+      },
+      {
+        "Value": 4568
+      },
+      {
+        "Value": "C:\\Windows\\System32\\runas.exe"
+      },
+      {
+        "Value": "%%1937"
+      },
+      {
+        "Value": 21520
+      },
+      {
+        "Value": "\"C:\\WINDOWS\\system32\\runas.exe\" /noprofile /user:[REDACTED_HOST]\\ia462midterm \"cmd.exe /k whoami\""
+      },
+      {
+        "Value": {
+          "BinaryLength": 12,
+          "AccountDomainSid": null,
+          "Value": "S-1-0-0"
+        }
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": 0
+      },
+      {
+        "Value": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+      },
+      {
+        "Value": {
+          "BinaryLength": 12,
+          "AccountDomainSid": null,
+          "Value": "S-1-16-12288"
+        }
+      }
+    ],
+    "Message": "A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\t[REDACTED_ACCOUNT_SID_004]\r\n\tAccount Name:\t\t[REDACTED_USER]\r\n\tAccount Domain:\t\t[REDACTED_HOST]\r\n\tLogon ID:\t\t0xA8E6C\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-0-0\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0x11d8\r\n\tNew Process Name:\tC:\\Windows\\System32\\runas.exe\r\n\tToken Elevation Type:\tTokenElevationTypeFull (2)\r\n\tMandatory Label:\t\tS-1-16-12288\r\n\tCreator Process ID:\t0x5410\r\n\tCreator Process Name:\tC:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\n\tProcess Command Line:\t\"C:\\WINDOWS\\system32\\runas.exe\" /noprofile /user:[REDACTED_HOST]\\ia462midterm \"cmd.exe /k whoami\"\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator."
+  },
+  {
+    "Id": 4625,
+    "Version": 0,
+    "Qualifiers": null,
+    "Level": 0,
+    "Task": 12544,
+    "Opcode": 0,
+    "Keywords": -9218868437227405312,
+    "RecordId": 571754,
+    "ProviderName": "Microsoft-Windows-Security-Auditing",
+    "ProviderId": "54849625-5478-4994-a5ba-3e3b0328c30d",
+    "LogName": "Security",
+    "ProcessId": 1476,
+    "ThreadId": 20196,
+    "MachineName": "[REDACTED_HOST]",
+    "UserId": null,
+    "TimeCreated": "/Date(1795471232509)/",
+    "ActivityId": "d83e6e49-6fe7-0004-916e-3ed8e76fdd01",
+    "RelatedActivityId": null,
+    "ContainerLog": "Security",
+    "MatchedQueryIds": [
+      0
+    ],
+    "Bookmark": {},
+    "LevelDisplayName": "Information",
+    "OpcodeDisplayName": "Info",
+    "TaskDisplayName": "Process Creation",
+    "KeywordsDisplayNames": [
+      "Audit Failure"
+    ],
+    "Properties": [
+      {
+        "Value": {
+          "BinaryLength": 28,
+          "AccountDomainSid": {
+            "BinaryLength": 24,
+            "AccountDomainSid": "[REDACTED_ACCOUNT_SID_005]",
+            "Value": "[REDACTED_ACCOUNT_SID_005]"
+          },
+          "Value": "[REDACTED_ACCOUNT_SID_004]"
+        }
+      },
+      {
+        "Value": "[REDACTED_USER]"
+      },
+      {
+        "Value": "[REDACTED_HOST]"
+      },
+      {
+        "Value": 691820
+      },
+      {
+        "Value": {
+          "BinaryLength": 12,
+          "AccountDomainSid": null,
+          "Value": "S-1-0-0"
+        }
+      },
+      {
+        "Value": "ia462midterm"
+      },
+      {
+        "Value": "[REDACTED_HOST]"
+      },
+      {
+        "Value": -1073741715
+      },
+      {
+        "Value": "%%2313"
+      },
+      {
+        "Value": -1073741718
+      },
+      {
+        "Value": 2
+      },
+      {
+        "Value": "seclogo"
+      },
+      {
+        "Value": "Negotiate"
+      },
+      {
+        "Value": "[REDACTED_HOST]"
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": 0
+      },
+      {
+        "Value": 20892
+      },
+      {
+        "Value": "C:\\Windows\\System32\\svchost.exe"
+      },
+      {
+        "Value": "::1"
+      },
+      {
+        "Value": "0"
+      }
+    ],
+    "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\t[REDACTED_ACCOUNT_SID_004]\r\n\tAccount Name:\t\t[REDACTED_USER]\r\n\tAccount Domain:\t\t[REDACTED_HOST]\r\n\tLogon ID:\t\t0xA8E6C\r\n\r\nLogon Type:\t\t\t2\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tS-1-0-0\r\n\tAccount Name:\t\tia462midterm\r\n\tAccount Domain:\t\t[REDACTED_HOST]\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x519c\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\t[REDACTED_HOST]\r\n\tSource Network Address:\t::1\r\n\tSource Port:\t\t0\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tseclogo\r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted.\r\n\r\nThe Subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.\r\n\r\nThe Logon Type field indicates the kind of logon that was requested. The most common types are 2 (interactive) and 3 (network).\r\n\r\nThe Process Information fields indicate which account and process on the system requested the logon.\r\n\r\nThe Network Information fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases.\r\n\r\nThe authentication information fields provide detailed information about this specific logon request.\r\n\t- Transited services indicate which intermediate services have participated in this logon request.\r\n\t- Package name indicates which sub-protocol was used among the NTLM protocols.\r\n\t- Key length indicates the length of the generated session key. This will be 0 if no session key was requested."
+  },
+  {
+    "Id": 4688,
+    "Version": 2,
+    "Qualifiers": null,
+    "Level": 0,
+    "Task": 13312,
+    "Opcode": 0,
+    "Keywords": -9214364837600034816,
+    "RecordId": 571752,
+    "ProviderName": "Microsoft-Windows-Security-Auditing",
+    "ProviderId": "54849625-5478-4994-a5ba-3e3b0328c30d",
+    "LogName": "Security",
+    "ProcessId": 4,
+    "ThreadId": 10744,
+    "MachineName": "[REDACTED_HOST]",
+    "UserId": null,
+    "TimeCreated": "/Date(1795471229985)/",
+    "ActivityId": null,
+    "RelatedActivityId": null,
+    "ContainerLog": "Security",
+    "MatchedQueryIds": [
+      0
+    ],
+    "Bookmark": {},
+    "LevelDisplayName": "Information",
+    "OpcodeDisplayName": "Info",
+    "TaskDisplayName": "Process Creation",
+    "KeywordsDisplayNames": [
+      "Audit Success"
+    ],
+    "Properties": [
+      {
+        "Value": {
+          "BinaryLength": 28,
+          "AccountDomainSid": {
+            "BinaryLength": 24,
+            "AccountDomainSid": "[REDACTED_ACCOUNT_SID_005]",
+            "Value": "[REDACTED_ACCOUNT_SID_005]"
+          },
+          "Value": "[REDACTED_ACCOUNT_SID_004]"
+        }
+      },
+      {
+        "Value": "[REDACTED_USER]"
+      },
+      {
+        "Value": "[REDACTED_HOST]"
+      },
+      {
+        "Value": 691820
+      },
+      {
+        "Value": 11076
+      },
+      {
+        "Value": "C:\\Windows\\System32\\runas.exe"
+      },
+      {
+        "Value": "%%1937"
+      },
+      {
+        "Value": 21520
+      },
+      {
+        "Value": "\"C:\\WINDOWS\\system32\\runas.exe\" /noprofile /user:[REDACTED_HOST]\\ia462midterm \"cmd.exe /k whoami\""
+      },
+      {
+        "Value": {
+          "BinaryLength": 12,
+          "AccountDomainSid": null,
+          "Value": "S-1-0-0"
+        }
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": 0
+      },
+      {
+        "Value": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+      },
+      {
+        "Value": {
+          "BinaryLength": 12,
+          "AccountDomainSid": null,
+          "Value": "S-1-16-12288"
+        }
+      }
+    ],
+    "Message": "A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\t[REDACTED_ACCOUNT_SID_004]\r\n\tAccount Name:\t\t[REDACTED_USER]\r\n\tAccount Domain:\t\t[REDACTED_HOST]\r\n\tLogon ID:\t\t0xA8E6C\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-0-0\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0x2b44\r\n\tNew Process Name:\tC:\\Windows\\System32\\runas.exe\r\n\tToken Elevation Type:\tTokenElevationTypeFull (2)\r\n\tMandatory Label:\t\tS-1-16-12288\r\n\tCreator Process ID:\t0x5410\r\n\tCreator Process Name:\tC:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\n\tProcess Command Line:\t\"C:\\WINDOWS\\system32\\runas.exe\" /noprofile /user:[REDACTED_HOST]\\ia462midterm \"cmd.exe /k whoami\"\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator."
+  },
+  {
+    "Id": 4720,
+    "Version": 0,
+    "Qualifiers": null,
+    "Level": 0,
+    "Task": 13824,
+    "Opcode": 0,
+    "Keywords": -9214364837600034816,
+    "RecordId": 571747,
+    "ProviderName": "Microsoft-Windows-Security-Auditing",
+    "ProviderId": "54849625-5478-4994-a5ba-3e3b0328c30d",
+    "LogName": "Security",
+    "ProcessId": 1476,
+    "ThreadId": 23120,
+    "MachineName": "[REDACTED_HOST]",
+    "UserId": null,
+    "TimeCreated": "/Date(1795471197155)/",
+    "ActivityId": "d83e6e49-6fe7-0004-916e-3ed8e76fdd01",
+    "RelatedActivityId": null,
+    "ContainerLog": "Security",
+    "MatchedQueryIds": [
+      0
+    ],
+    "Bookmark": {},
+    "LevelDisplayName": "Information",
+    "OpcodeDisplayName": "Info",
+    "TaskDisplayName": "Process Creation",
+    "KeywordsDisplayNames": [
+      "Audit Success"
+    ],
+    "Properties": [
+      {
+        "Value": "ia462midterm"
+      },
+      {
+        "Value": "[REDACTED_HOST]"
+      },
+      {
+        "Value": {
+          "BinaryLength": 28,
+          "AccountDomainSid": {
+            "BinaryLength": 24,
+            "AccountDomainSid": "[REDACTED_ACCOUNT_SID_005]",
+            "Value": "[REDACTED_ACCOUNT_SID_005]"
+          },
+          "Value": "[REDACTED_ACCOUNT_SID_006]"
+        }
+      },
+      {
+        "Value": {
+          "BinaryLength": 28,
+          "AccountDomainSid": {
+            "BinaryLength": 24,
+            "AccountDomainSid": "[REDACTED_ACCOUNT_SID_005]",
+            "Value": "[REDACTED_ACCOUNT_SID_005]"
+          },
+          "Value": "[REDACTED_ACCOUNT_SID_004]"
+        }
+      },
+      {
+        "Value": "[REDACTED_USER]"
+      },
+      {
+        "Value": "[REDACTED_HOST]"
+      },
+      {
+        "Value": 691820
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": "ia462midterm"
+      },
+      {
+        "Value": "%%1793"
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": "%%1793"
+      },
+      {
+        "Value": "%%1793"
+      },
+      {
+        "Value": "%%1793"
+      },
+      {
+        "Value": "%%1793"
+      },
+      {
+        "Value": "%%1793"
+      },
+      {
+        "Value": "%%1794"
+      },
+      {
+        "Value": "%%1794"
+      },
+      {
+        "Value": "513"
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": "0x0"
+      },
+      {
+        "Value": "0x15"
+      },
+      {
+        "Value": "\r\n\t\t%%2080\r\n\t\t%%2082\r\n\t\t%%2084"
+      },
+      {
+        "Value": "%%1793"
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": "%%1797"
+      }
+    ],
+    "Message": "A user account was created.\r\n\r\nSubject:\r\n\tSecurity ID:\t\t[REDACTED_ACCOUNT_SID_004]\r\n\tAccount Name:\t\t[REDACTED_USER]\r\n\tAccount Domain:\t\t[REDACTED_HOST]\r\n\tLogon ID:\t\t0xA8E6C\r\n\r\nNew Account:\r\n\tSecurity ID:\t\t[REDACTED_ACCOUNT_SID_006]\r\n\tAccount Name:\t\tia462midterm\r\n\tAccount Domain:\t\t[REDACTED_HOST]\r\n\r\nAttributes:\r\n\tSAM Account Name:\tia462midterm\r\n\tDisplay Name:\t\t<value not set>\r\n\tUser Principal Name:\t-\r\n\tHome Directory:\t\t<value not set>\r\n\tHome Drive:\t\t<value not set>\r\n\tScript Path:\t\t<value not set>\r\n\tProfile Path:\t\t<value not set>\r\n\tUser Workstations:\t<value not set>\r\n\tPassword Last Set:\t<never>\r\n\tAccount Expires:\t\t<never>\r\n\tPrimary Group ID:\t513\r\n\tAllowed To Delegate To:\t-\r\n\tOld UAC Value:\t\t0x0\r\n\tNew UAC Value:\t\t0x15\r\n\tUser Account Control:\t\r\n\t\tAccount Disabled\r\n\t\t'Password Not Required' - Enabled\r\n\t\t'Normal Account' - Enabled\r\n\tUser Parameters:\t<value not set>\r\n\tSID History:\t\t-\r\n\tLogon Hours:\t\tAll\r\n\r\nAdditional Information:\r\n\tPrivileges\t\t-"
+  },
+  {
+    "Id": 4688,
+    "Version": 2,
+    "Qualifiers": null,
+    "Level": 0,
+    "Task": 13312,
+    "Opcode": 0,
+    "Keywords": -9214364837600034816,
+    "RecordId": 571745,
+    "ProviderName": "Microsoft-Windows-Security-Auditing",
+    "ProviderId": "54849625-5478-4994-a5ba-3e3b0328c30d",
+    "LogName": "Security",
+    "ProcessId": 4,
+    "ThreadId": 10476,
+    "MachineName": "[REDACTED_HOST]",
+    "UserId": null,
+    "TimeCreated": "/Date(1795471187729)/",
+    "ActivityId": null,
+    "RelatedActivityId": null,
+    "ContainerLog": "Security",
+    "MatchedQueryIds": [
+      0
+    ],
+    "Bookmark": {},
+    "LevelDisplayName": "Information",
+    "OpcodeDisplayName": "Info",
+    "TaskDisplayName": "Process Creation",
+    "KeywordsDisplayNames": [
+      "Audit Success"
+    ],
+    "Properties": [
+      {
+        "Value": {
+          "BinaryLength": 28,
+          "AccountDomainSid": {
+            "BinaryLength": 24,
+            "AccountDomainSid": "[REDACTED_ACCOUNT_SID_005]",
+            "Value": "[REDACTED_ACCOUNT_SID_005]"
+          },
+          "Value": "[REDACTED_ACCOUNT_SID_004]"
+        }
+      },
+      {
+        "Value": "[REDACTED_USER]"
+      },
+      {
+        "Value": "[REDACTED_HOST]"
+      },
+      {
+        "Value": 691820
+      },
+      {
+        "Value": 11708
+      },
+      {
+        "Value": "C:\\Windows\\System32\\net1.exe"
+      },
+      {
+        "Value": "%%1937"
+      },
+      {
+        "Value": 24080
+      },
+      {
+        "Value": "C:\\WINDOWS\\system32\\net1 user ia462midterm * /add"
+      },
+      {
+        "Value": {
+          "BinaryLength": 12,
+          "AccountDomainSid": null,
+          "Value": "S-1-0-0"
+        }
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": 0
+      },
+      {
+        "Value": "C:\\Windows\\System32\\net.exe"
+      },
+      {
+        "Value": {
+          "BinaryLength": 12,
+          "AccountDomainSid": null,
+          "Value": "S-1-16-12288"
+        }
+      }
+    ],
+    "Message": "A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\t[REDACTED_ACCOUNT_SID_004]\r\n\tAccount Name:\t\t[REDACTED_USER]\r\n\tAccount Domain:\t\t[REDACTED_HOST]\r\n\tLogon ID:\t\t0xA8E6C\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-0-0\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0x2dbc\r\n\tNew Process Name:\tC:\\Windows\\System32\\net1.exe\r\n\tToken Elevation Type:\tTokenElevationTypeFull (2)\r\n\tMandatory Label:\t\tS-1-16-12288\r\n\tCreator Process ID:\t0x5e10\r\n\tCreator Process Name:\tC:\\Windows\\System32\\net.exe\r\n\tProcess Command Line:\tC:\\WINDOWS\\system32\\net1 user ia462midterm * /add\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator."
+  },
+  {
+    "Id": 4688,
+    "Version": 2,
+    "Qualifiers": null,
+    "Level": 0,
+    "Task": 13312,
+    "Opcode": 0,
+    "Keywords": -9214364837600034816,
+    "RecordId": 571744,
+    "ProviderName": "Microsoft-Windows-Security-Auditing",
+    "ProviderId": "54849625-5478-4994-a5ba-3e3b0328c30d",
+    "LogName": "Security",
+    "ProcessId": 4,
+    "ThreadId": 23788,
+    "MachineName": "[REDACTED_HOST]",
+    "UserId": null,
+    "TimeCreated": "/Date(1795471187714)/",
+    "ActivityId": null,
+    "RelatedActivityId": null,
+    "ContainerLog": "Security",
+    "MatchedQueryIds": [
+      0
+    ],
+    "Bookmark": {},
+    "LevelDisplayName": "Information",
+    "OpcodeDisplayName": "Info",
+    "TaskDisplayName": "Process Creation",
+    "KeywordsDisplayNames": [
+      "Audit Success"
+    ],
+    "Properties": [
+      {
+        "Value": {
+          "BinaryLength": 28,
+          "AccountDomainSid": {
+            "BinaryLength": 24,
+            "AccountDomainSid": "[REDACTED_ACCOUNT_SID_005]",
+            "Value": "[REDACTED_ACCOUNT_SID_005]"
+          },
+          "Value": "[REDACTED_ACCOUNT_SID_004]"
+        }
+      },
+      {
+        "Value": "[REDACTED_USER]"
+      },
+      {
+        "Value": "[REDACTED_HOST]"
+      },
+      {
+        "Value": 691820
+      },
+      {
+        "Value": 24080
+      },
+      {
+        "Value": "C:\\Windows\\System32\\net.exe"
+      },
+      {
+        "Value": "%%1937"
+      },
+      {
+        "Value": 21520
+      },
+      {
+        "Value": "\"C:\\WINDOWS\\system32\\net.exe\" user ia462midterm * /add"
+      },
+      {
+        "Value": {
+          "BinaryLength": 12,
+          "AccountDomainSid": null,
+          "Value": "S-1-0-0"
+        }
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": "-"
+      },
+      {
+        "Value": 0
+      },
+      {
+        "Value": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+      },
+      {
+        "Value": {
+          "BinaryLength": 12,
+          "AccountDomainSid": null,
+          "Value": "S-1-16-12288"
+        }
+      }
+    ],
+    "Message": "A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\t[REDACTED_ACCOUNT_SID_004]\r\n\tAccount Name:\t\t[REDACTED_USER]\r\n\tAccount Domain:\t\t[REDACTED_HOST]\r\n\tLogon ID:\t\t0xA8E6C\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-0-0\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0x5e10\r\n\tNew Process Name:\tC:\\Windows\\System32\\net.exe\r\n\tToken Elevation Type:\tTokenElevationTypeFull (2)\r\n\tMandatory Label:\t\tS-1-16-12288\r\n\tCreator Process ID:\t0x5410\r\n\tCreator Process Name:\tC:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\n\tProcess Command Line:\t\"C:\\WINDOWS\\system32\\net.exe\" user ia462midterm * /add\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator."
+  },
+  {
+    "Id": 4104,
+    "Version": 1,
+    "Qualifiers": null,
+    "Level": 5,
+    "Task": 2,
+    "Opcode": 15,
+    "Keywords": 0,
+    "RecordId": 3349,
+    "ProviderName": "Microsoft-Windows-PowerShell",
+    "ProviderId": "a0c1853b-5c40-4b15-8766-3cf1c58f985a",
+    "LogName": "Microsoft-Windows-PowerShell/Operational",
+    "ProcessId": 20840,
+    "ThreadId": 12128,
+    "MachineName": "[REDACTED_HOST]",
+    "UserId": {
+      "BinaryLength": 28,
+      "AccountDomainSid": {
+        "BinaryLength": 24,
+        "AccountDomainSid": {
+          "BinaryLength": 24,
+          "AccountDomainSid": {
+            "BinaryLength": 24,
+            "AccountDomainSid": "[REDACTED_ACCOUNT_SID_005]",
+            "Value": "[REDACTED_ACCOUNT_SID_005]"
+          },
+          "Value": "[REDACTED_ACCOUNT_SID_005]"
+        },
+        "Value": "[REDACTED_ACCOUNT_SID_005]"
+      },
+      "Value": "[REDACTED_ACCOUNT_SID_004]"
+    },
+    "TimeCreated": "/Date(1795471292716)/",
+    "ActivityId": "d83e6e49-6fe7-0006-a44e-d1d8e76fdd01",
+    "RelatedActivityId": null,
+    "ContainerLog": "Microsoft-Windows-PowerShell/Operational",
+    "MatchedQueryIds": [
+      0
+    ],
+    "Bookmark": {},
+    "LevelDisplayName": "Verbose",
+    "OpcodeDisplayName": "On create calls",
+    "TaskDisplayName": "Execute a Remote Command",
+    "KeywordsDisplayNames": [],
+    "Properties": [
+      {
+        "Value": 1
+      },
+      {
+        "Value": 1
+      },
+      {
+        "Value": "Write-Output 'IA462 midterm logging test'"
+      },
+      {
+        "Value": "bc95ce39-6731-40d4-bbfa-999bbf63ebf3"
+      },
+      {
+        "Value": ""
+      }
+    ],
+    "Message": "Creating Scriptblock text (1 of 1):\r\nWrite-Output 'IA462 midterm logging test'\r\n\r\nScriptBlock ID: bc95ce39-6731-40d4-bbfa-999bbf63ebf3\r\nPath: "
+  }
+]

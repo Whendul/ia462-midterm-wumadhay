@@ -24,15 +24,11 @@ remain pinned. Debian updates come from the configured repositories at build
 time, so the complete image is not bit-for-bit reproducible across dates.
 `--no-cache` ensures CI refreshes that package-update layer.
 
-Section 4 reports and the Docker Bench report remain historical observations
-of the original image and host. New local build and scan reports should be
-saved in Section 6. Do not describe the revised image as tested or the CI as
-passing until the actual local checks and GitHub runs complete.
+Section 4 reports and the Docker Bench report remain historical observations of the original image and host. Section 6 contains the patched image's local build, package versions, Trivy gate, and runtime tests. The saved runtime test confirms UID/GID 999 and GET/HEAD/missing-page results of 200/200/404. The final run script targets the already-tested `ia462-midterm:ci-ready` image and `ia462-midterm-ci-check` container on loopback port 5002. Earlier Section 3 evidence describes the original image on port 5001.
 
-Before the demonstration PR, establish a successful run on main. In the test
-branch, downgrade Flask to a known-vulnerable release, regenerate the lock,
-and update the evidence copies. Record both Dependency Review and pip-audit
-failing because of vulnerabilities, then close the PR without merging.
+The Security CI/CD Pipeline passed on main commit `6969c4490f5b742bd012375e18fc09f6d9313020`: <https://github.com/Whendul/ia462-midterm-wumadhay/actions/runs/45293922167>.
+
+PR #4 intentionally changes Flask and Werkzeug to 2.0.0 and regenerates the lock. Dependency Review, pip-audit, and Trivy fail while the build and SBOM jobs pass. Dependency Review explicitly reports vulnerable packages; the other failures occur in the audit/gate steps after setup succeeds. The PR remains separate from the secure main requirements. Its current closure and merge-enforcement evidence are documented in [pr-gate-status.md](pr-gate-status.md).
 
 ## Verified action pins
 

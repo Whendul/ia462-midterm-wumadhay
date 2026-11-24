@@ -1,0 +1,278 @@
+**********************
+Windows PowerShell transcript start
+Start time: 20261123163252
+Username: [REDACTED_HOST]\[REDACTED_USER]
+RunAs User: [REDACTED_HOST]\[REDACTED_USER]
+Configuration Name: 
+Machine: [REDACTED_HOST] (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 21520
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\windows-transcript.txt
+
+
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> Get-MpComputerStatus |
+    Format-List AMServiceEnabled, AntivirusEnabled, RealTimeProtectionEnabled, IsTamperProtected
+
+
+AMServiceEnabled          : True
+AntivirusEnabled          : True
+RealTimeProtectionEnabled : True
+IsTamperProtected         : True
+
+
+
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> Get-NetFirewallProfile -PolicyStore ActiveStore |
+    Format-Table Name, Enabled -AutoSize
+
+Name    Enabled
+----    -------
+Domain     True
+Private    True
+Public     True
+
+
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> Get-SmbServerConfiguration |
+    Select-Object EnableSMB1Protocol
+
+EnableSMB1Protocol
+------------------
+             False
+
+
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> auditpol /get /subcategory:"Logon"
+auditpol /get /subcategory:"Process Creation"
+auditpol /get /subcategory:"User Account Management"
+System audit policy
+Category/Subcategory                      Setting
+Logon/Logoff
+  Logon                                   Success and Failure
+System audit policy
+Category/Subcategory                      Setting
+Detailed Tracking
+  Process Creation                        Success
+System audit policy
+Category/Subcategory                      Setting
+Account Management
+  User Account Management                 Success
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Audit" |
+    Format-List ProcessCreationIncludeCmdLine_Enabled
+
+Get-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging" |
+    Format-List EnableScriptBlockLogging
+
+
+ProcessCreationIncludeCmdLine_Enabled : 1
+
+
+
+
+
+EnableScriptBlockLogging : 1
+
+
+
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> Get-CimInstance Win32_Service -Filter "Name LIKE 'Sysmon%'" |
+    Format-List Name, State, StartMode, PathName
+
+
+Name      : Sysmon64
+State     : Running
+StartMode : Auto
+PathName  : C:\WINDOWS\Sysmon64.exe
+
+
+
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> Get-CimInstance Win32_Service -Filter "Name LIKE 'Sysmon%'" 
+
+ProcessId Name     StartMode State   Status ExitCode
+--------- ----     --------- -----   ------ --------
+14264     Sysmon64 Auto      Running OK     0
+
+
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> Copy-Item "$env:USERPROFILE\Downloads\lab3-win\sysmonconfig.xml" -Destination .\sysmonconfig.xml
+
+Get-Item .\sysmonconfig.xml |
+    Select-Object Name, Length
+
+Name             Length
+----             ------
+sysmonconfig.xml 123257
+
+
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> Copy-Item "$env:USERPROFILE\Downloads\lab3-win\sysmonconfig.xml" -Destination .\sysmonconfig.xml
+Get-Item .\sysmonconfig.xml 
+
+
+    Directory: C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        11/17/2026   6:03 PM         123257 sysmonconfig.xml
+
+
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> auditpol /get /subcategory:"Logon"
+auditpol /get /subcategory:"Process Creation"
+auditpol /get /subcategory:"User Account Management"
+System audit policy
+Category/Subcategory                      Setting
+Logon/Logoff
+  Logon                                   Success and Failure
+System audit policy
+Category/Subcategory                      Setting
+Detailed Tracking
+  Process Creation                        Success
+System audit policy
+Category/Subcategory                      Setting
+Account Management
+  User Account Management                 Success
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Audit" /v ProcessCreationIncludeCmdLine_Enabled
+
+reg query "HKLM\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging" /v EnableScriptBlockLogging
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Audit
+    ProcessCreationIncludeCmdLine_Enabled    REG_DWORD    0x1
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging
+    EnableScriptBlockLogging    REG_DWORD    0x1
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> auditpol /get /subcategory:"Logon"
+auditpol /get /subcategory:"Process Creation"
+auditpol /get /subcategory:"User Account Management"
+
+reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Audit" /v ProcessCreationIncludeCmdLine_Enabled
+
+reg query "HKLM\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging" /v EnableScriptBlockLogging
+System audit policy
+Category/Subcategory                      Setting
+Logon/Logoff
+  Logon                                   Success and Failure
+System audit policy
+Category/Subcategory                      Setting
+Detailed Tracking
+  Process Creation                        Success
+System audit policy
+Category/Subcategory                      Setting
+Account Management
+  User Account Management                 Success
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Audit
+    ProcessCreationIncludeCmdLine_Enabled    REG_DWORD    0x1
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging
+    EnableScriptBlockLogging    REG_DWORD    0x1
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> $midtermStart = Get-Date
+$midtermStart.ToString("o") | Set-Content .\event-test-start.txt
+
+net user ia462midterm * /add
+Type a password for the user:
+Retype the password to confirm:
+The command completed successfully.
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> Push-Location "$env:WINDIR\System32"
+runas /noprofile /user:"$env:COMPUTERNAME\ia462midterm" "cmd.exe /k whoami"
+Pop-Location
+Enter the password for [REDACTED_HOST]\ia462midterm:
+Attempting to start cmd.exe /k whoami as user "[REDACTED_HOST]\ia462midterm" ...
+RUNAS ERROR: Unable to run - cmd.exe /k whoami
+1326: The user name or password is incorrect.
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> Push-Location "$env:WINDIR\System32"
+runas /noprofile /user:"$env:COMPUTERNAME\ia462midterm" "cmd.exe /k whoami"
+Pop-Location
+Enter the password for [REDACTED_HOST]\ia462midterm:
+Attempting to start cmd.exe /k whoami as user "[REDACTED_HOST]\ia462midterm" ...
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> powershell.exe -NoProfile -Command "Write-Output 'IA462 midterm logging test'"
+IA462 midterm logging test
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> $midtermStart = [datetime](Get-Content .\event-test-start.txt -Raw -ErrorAction Stop)
+
+$securityEvents = Get-WinEvent -FilterHashtable @{
+    LogName = "Security"
+    Id = 4624, 4625, 4688, 4720
+    StartTime = $midtermStart
+} | Where-Object {
+    $_.Message -match "ia462midterm|IA462 midterm logging test"
+}
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> $scriptEvents = Get-WinEvent -FilterHashtable @{
+    LogName = "Microsoft-Windows-PowerShell/Operational"
+    Id = 4104
+    StartTime = $midtermStart
+} | Where-Object {
+    $_.Properties[2].Value.Trim() -eq "Write-Output 'IA462 midterm logging test'"
+}
+
+$testEvents = @($securityEvents) + @($scriptEvents)
+
+$testEvents | ConvertTo-Json -Depth 5 |
+    Set-Content .\midterm-test-events.json -Encoding UTF8
+
+$testEvents | Sort-Object TimeCreated |
+    Format-Table TimeCreated, Id, LogName -AutoSize
+
+TimeCreated             Id LogName
+-----------             -- -------
+11/23/2026 4:59:47 PM 4688 Security
+11/23/2026 4:59:47 PM 4688 Security
+11/23/2026 4:59:57 PM 4720 Security
+11/23/2026 5:00:29 PM 4688 Security
+11/23/2026 5:00:32 PM 4625 Security
+11/23/2026 5:00:40 PM 4688 Security
+11/23/2026 5:00:41 PM 4624 Security
+11/23/2026 5:00:41 PM 4688 Security
+11/23/2026 5:00:41 PM 4688 Security
+11/23/2026 5:00:41 PM 4688 Security
+11/23/2026 5:01:32 PM 4688 Security
+11/23/2026 5:01:32 PM 4104 Microsoft-Windows-PowerShell/Operational
+
+
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> Get-WinEvent -LogName Security -MaxEvents 100 |
+    ConvertTo-Json -Depth 5 |
+    Set-Content .\security-events.json -Encoding UTF8
+
+(Get-Content .\security-events.json -Raw | ConvertFrom-Json).Count
+100
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> net user ia462midterm /delete
+The command completed successfully.
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> $appPath = "$env:USERPROFILE\ia462-midterm-wumadhay\midterm\app"
+
+New-Item -ItemType Directory -Path $appPath -Force
+
+Add-MpPreference -ExclusionPath $appPath
+
+
+    Directory: C:\Users\[REDACTED_USER]\ia462-midterm-wumadhay\midterm
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        11/23/2026   3:04 PM                app
+
+
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> Get-MpPreference |
+    Select-Object -ExpandProperty ExclusionPath |
+    Tee-Object -FilePath .\defender-exclusions.txt
+C:\IA428\Cases
+C:\Users\[REDACTED_USER]\ia462-midterm-wumadhay\midterm\app
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> Get-ChildItem -File | Select-Object Name, Length
+
+Name                     Length
+----                     ------
+defender-exclusions.txt     136
+event-test-start.txt         35
+midterm-test-events.json  72710
+security-events.json     478194
+sysmonconfig.xml         123257
+windows-transcript.txt     6072
+
+
+PS C:\Users\[REDACTED_USER]\ia462-midterm-evidence\section2> Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20261123171624
+**********************
