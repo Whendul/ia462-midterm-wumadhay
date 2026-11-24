@@ -1,0 +1,17 @@
+{
+  "checked_at_utc": "2026-11-24T01:08:39.321952+00:00",
+  "pull_request_url": "https://github.com/Whendul/ia462-midterm-wumadhay/pull/4",
+  "state": "closed",
+  "merged": false,
+  "closed_at": "2026-11-24T00:58:12Z",
+  "head_sha": "acca4e086f0bb73c93054d01a23f1c44db395e09",
+  "main_protected": true,
+  "checks": {
+    "Generate SBOM (Syft, SPDX)": "success",
+    "Vulnerability Scan (Trivy)": "failure",
+    "Python Dependency Audit (pip-audit)": "failure",
+    "Build Docker Image": "success",
+    "Dependency Review": "failure"
+  },
+  "verification_limits": "The API confirms protected=true, not every rule option. Screenshot 22 must show actual merging blocked. Verify the final one-approval/no-bypass settings in GitHub."
+}

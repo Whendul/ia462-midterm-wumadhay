@@ -1,29 +1,25 @@
 # Vulnerable pull-request demonstration
 
-Repository: <https://github.com/Whendul/ia462-midterm-wumadhay>
+PR #4: <https://github.com/Whendul/ia462-midterm-wumadhay/pull/4>
 
-Successful main run: <https://github.com/Whendul/ia462-midterm-wumadhay/actions/runs/45293922167>
+The demonstration changes Flask and Werkzeug to 2.0.0 and regenerates the hashed lock on a separate branch. The main implementation retains Flask 3.1.3 and Werkzeug 3.1.9.
 
-Main commit: `6969c4490f5b742bd012375e18fc09f6d9313020`
+GitHub confirms that PR #4 is **closed and was not merged**. It also currently reports main as protected. The final API snapshot is in [pr-final-state.json](pr-final-state.json). Screenshot 22 records the blocked merge state captured before closure; screenshot 23 records the closed state. The API snapshot does not independently validate the visual content of those screenshots or every branch-rule option.
 
-Test PR: <https://github.com/Whendul/ia462-midterm-wumadhay/pull/4>
-
-Test commit: `acca4e086f0bb73c93054d01a23f1c44db395e09`
-
-The test branch changes Flask and Werkzeug to 2.0.0, regenerates the hashed lock, and updates both Section 6 copies. The main branch retains Flask 3.1.3 and Werkzeug 3.1.9.
-
-| Check | Observed result |
+| Check | Result |
 | --- | --- |
-| Dependency Review | Failed; GitHub annotation: "Dependency review detected vulnerable packages." |
-| Python Dependency Audit (pip-audit) | Failed in "Audit direct pins and the complete hashed lock" after successful setup and audit-tool installation |
-| Vulnerability Scan (Trivy) | Failed in "Block fixable High and Critical vulnerabilities" after successful setup and generation of the full report |
-| Build Docker Image | Passed |
-| Generate SBOM (Syft, SPDX) | Passed |
+| Dependency Review | failure |
+| Python Dependency Audit (pip-audit) | failure |
+| Vulnerability Scan (Trivy) | failure |
+| Build Docker Image | success |
+| Generate SBOM (Syft, SPDX) | success |
 
-Dependency Review run: <https://github.com/Whendul/ia462-midterm-wumadhay/actions/runs/45296433665>
+Dependency Review annotated its failure with "Dependency review detected vulnerable packages." pip-audit failed in its dependency-audit step after successful installation; Trivy failed in its fixable High/Critical gate after producing the full report. The build and SBOM jobs succeeded.
 
-Security pipeline run: <https://github.com/Whendul/ia462-midterm-wumadhay/actions/runs/45296433712>
+- [Successful main run](https://github.com/Whendul/ia462-midterm-wumadhay/actions/runs/45293922167)
+- [Dependency Review test run](https://github.com/Whendul/ia462-midterm-wumadhay/actions/runs/45296433665)
+- [Security pipeline test run](https://github.com/Whendul/ia462-midterm-wumadhay/actions/runs/45296433712)
+- [Blocked merge screenshot](screenshots/22-vulnerable-pr-blocked.png)
+- [Closed PR screenshot](screenshots/23-vulnerable-pr-closed.png)
 
-At the time this evidence package was prepared, PR #4 was **open and unmerged**. The supplemental `screenshots/vulnerable-pr-checks-failed.png` records check failures before merge enforcement was configured. It is not the final blocked-merge screenshot.
-
-Completion remains pending: configure required checks, capture `22-vulnerable-pr-blocked.png` while the PR is open, close the PR without merging, and capture `23-vulnerable-pr-closed.png`. The supplied completion helper verifies the PR's closed/unmerged state before replacing this pending status with a final record.
+The supplemental failed-checks screenshot predates merge enforcement. Required status checks, rather than the mere presence of red checks, provide the merge gate. Verify the final requirement for one approving review, conversation resolution, and no bypass in the repository settings and walkthrough.
