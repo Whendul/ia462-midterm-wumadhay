@@ -1,0 +1,38 @@
+title: Local Account Creation on Windows Workstations and Member Servers
+id: 16b6ee3c-d1ca-439b-a035-d3819c998e1b
+status: experimental
+description: >-
+    Detects successful user account creation through Windows Security event 4720.
+    Apply to workstations and member servers, excluding domain controllers,
+    to monitor local account creation associated with persistence.
+    The authorized account creation in Section 2 provides a benign example
+    that matches this selection; a match alone does not establish an attack.
+references:
+    - https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4720
+    - https://attack.mitre.org/techniques/T1136/001/
+author: wumadhay
+date: '2026-11-23'
+tags:
+    - attack.persistence
+    - attack.t1136.001
+logsource:
+    product: windows
+    service: security
+    definition: >-
+        Requires Audit User Account Management success auditing.
+        Scope collection or the SIEM query to non-domain-controller hosts.
+detection:
+    selection:
+        EventID: 4720
+    condition: selection
+fields:
+    - SubjectUserName
+    - SubjectDomainName
+    - TargetUserName
+    - TargetDomainName
+    - TargetSid
+falsepositives:
+    - Authorized administrator account creation
+    - Approved provisioning automation
+    - Authorized lab account creation
+level: low

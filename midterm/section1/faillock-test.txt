@@ -1,0 +1,7 @@
+ia462student:
+When                Type  Source                                           Valid
+2026-11-23 16:21:32 TTY   /dev/pts/2                                           V
+2026-11-23 16:21:36 TTY   /dev/pts/2                                           V
+2026-11-23 16:21:40 TTY   /dev/pts/2                                           V
+2026-11-23 16:21:45 TTY   /dev/pts/2                                           V
+2026-11-23 16:21:50 TTY   /dev/pts/2                                           V

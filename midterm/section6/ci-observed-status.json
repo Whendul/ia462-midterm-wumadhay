@@ -1,0 +1,184 @@
+{
+  "review_date": "2026-11-23",
+  "source": "GitHub public API",
+  "main": {
+    "sha": "6969c4490f5b742bd012375e18fc09f6d9313020",
+    "url": "https://github.com/Whendul/ia462-midterm-wumadhay/commit/6969c4490f5b742bd012375e18fc09f6d9313020"
+  },
+  "main_pipeline": {
+    "id": 45293922167,
+    "name": "Security CI/CD Pipeline",
+    "head_sha": "6969c4490f5b742bd012375e18fc09f6d9313020",
+    "conclusion": "success",
+    "html_url": "https://github.com/Whendul/ia462-midterm-wumadhay/actions/runs/45293922167"
+  },
+  "pr4_at_review": {
+    "number": 4,
+    "state": "open",
+    "merged": false,
+    "html_url": "https://github.com/Whendul/ia462-midterm-wumadhay/pull/4"
+  },
+  "pr_pipeline_jobs": [
+    {
+      "name": "Build Docker Image",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Checkout",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build the pinned image with current Debian patches",
+          "conclusion": "success"
+        },
+        {
+          "name": "Share the built image with scan jobs",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Checkout",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "Python Dependency Audit (pip-audit)",
+      "conclusion": "failure",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Checkout",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Python",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install the audit tool",
+          "conclusion": "success"
+        },
+        {
+          "name": "Audit direct pins and the complete hashed lock",
+          "conclusion": "failure"
+        },
+        {
+          "name": "Save audit reports even when vulnerabilities are found",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Set up Python",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Post Checkout",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "Vulnerability Scan (Trivy)",
+      "conclusion": "failure",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Checkout",
+          "conclusion": "success"
+        },
+        {
+          "name": "Download the image",
+          "conclusion": "success"
+        },
+        {
+          "name": "Load the image",
+          "conclusion": "success"
+        },
+        {
+          "name": "Report findings including those without available fixes",
+          "conclusion": "success"
+        },
+        {
+          "name": "Block fixable High and Critical vulnerabilities",
+          "conclusion": "failure"
+        },
+        {
+          "name": "Display scan reports",
+          "conclusion": "success"
+        },
+        {
+          "name": "Save scan reports even when the gate fails",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Block fixable High and Critical vulnerabilities",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Report findings including those without available fixes",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Checkout",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "Generate SBOM (Syft, SPDX)",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Download the image",
+          "conclusion": "success"
+        },
+        {
+          "name": "Load the image",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install the specified Syft version",
+          "conclusion": "success"
+        },
+        {
+          "name": "Generate SPDX, CycloneDX, and readable inventories",
+          "conclusion": "success"
+        },
+        {
+          "name": "Save the SBOMs",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "dependency_review_annotation": "Dependency review detected vulnerable packages."
+}

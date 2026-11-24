@@ -1,0 +1,222 @@
+[
+  {
+    "Id": "32582afc38fe1353d582638e3d743001431f4ec2b49414656935cc51a96733ec",
+    "Created": "2026-11-23T23:53:35.256199852Z",
+    "Path": "python",
+    "Args": [
+      "app/app.py"
+    ],
+    "State": {
+      "Status": "running",
+      "Running": true,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 54800,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-11-23T23:53:35.418109731Z",
+      "FinishedAt": "0001-01-01T00:00:00Z"
+    },
+    "Image": "sha256:30729182aebafd55c4b16774ae654646ee9d33dd1562af5b9557ac57cb0db54c",
+    "ResolvConfPath": "/var/lib/docker/containers/32582afc38fe1353d582638e3d743001431f4ec2b49414656935cc51a96733ec/resolv.conf",
+    "HostnamePath": "/var/lib/docker/containers/32582afc38fe1353d582638e3d743001431f4ec2b49414656935cc51a96733ec/hostname",
+    "HostsPath": "/var/lib/docker/containers/32582afc38fe1353d582638e3d743001431f4ec2b49414656935cc51a96733ec/hosts",
+    "LogPath": "/var/lib/docker/containers/32582afc38fe1353d582638e3d743001431f4ec2b49414656935cc51a96733ec/32582afc38fe1353d582638e3d743001431f4ec2b49414656935cc51a96733ec-json.log",
+    "Name": "/ia462-midterm-ci-check",
+    "RestartCount": 0,
+    "Driver": "overlayfs",
+    "Platform": "linux",
+    "MountLabel": "",
+    "ProcessLabel": "",
+    "AppArmorProfile": "",
+    "ExecIDs": null,
+    "HostConfig": {
+      "Binds": null,
+      "ContainerIDFile": "",
+      "LogConfig": {
+        "Type": "json-file",
+        "Config": {}
+      },
+      "NetworkMode": "bridge",
+      "PortBindings": {
+        "5000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "5002"
+          }
+        ]
+      },
+      "RestartPolicy": {
+        "Name": "no",
+        "MaximumRetryCount": 0
+      },
+      "AutoRemove": false,
+      "VolumeDriver": "",
+      "VolumesFrom": null,
+      "ConsoleSize": [
+        30,
+        120
+      ],
+      "CapAdd": null,
+      "CapDrop": [
+        "ALL"
+      ],
+      "CgroupnsMode": "private",
+      "Dns": null,
+      "DnsOptions": [],
+      "DnsSearch": [],
+      "ExtraHosts": null,
+      "GroupAdd": null,
+      "IpcMode": "private",
+      "Cgroup": "",
+      "Links": null,
+      "OomScoreAdj": 0,
+      "PidMode": "",
+      "Privileged": false,
+      "PublishAllPorts": false,
+      "ReadonlyRootfs": true,
+      "SecurityOpt": [
+        "no-new-privileges=true",
+        "seccomp={\"defaultAction\":\"SCMP_ACT_ERRNO\",\"defaultErrnoRet\":1,\"architectures\":[\"SCMP_ARCH_X86_64\"],\"syscalls\":[{\"comment\":\"Observed during startup, GET /, HEAD /, GET /missing, and shutdown in app.strace.\",\"names\":[\"accept4\",\"access\",\"arch_prctl\",\"bind\",\"brk\",\"close\",\"connect\",\"epoll_create1\",\"epoll_ctl\",\"epoll_wait\",\"execve\",\"exit\",\"exit_group\",\"fcntl\",\"fstat\",\"futex\",\"getcwd\",\"getdents64\",\"getpid\",\"getrandom\",\"getsockname\",\"gettid\",\"ioctl\",\"listen\",\"lseek\",\"madvise\",\"mmap\",\"mprotect\",\"mremap\",\"munmap\",\"newfstatat\",\"openat\",\"poll\",\"pread64\",\"prlimit64\",\"read\",\"readlink\",\"readlinkat\",\"recvfrom\",\"rseq\",\"rt_sigaction\",\"rt_sigprocmask\",\"rt_sigreturn\",\"sendto\",\"set_robust_list\",\"set_tid_address\",\"setsockopt\",\"shutdown\",\"uname\",\"write\"],\"action\":\"SCMP_ACT_ALLOW\"},{\"comment\":\"Additional read-only identity calls for id/whoami verification, not observed in the app trace.\",\"names\":[\"getuid\",\"geteuid\",\"getgid\",\"getegid\",\"getgroups\"],\"action\":\"SCMP_ACT_ALLOW\"},{\"comment\":\"Allow only the thread-creation flags observed in the trace.\",\"names\":[\"clone\"],\"action\":\"SCMP_ACT_ALLOW\",\"args\":[{\"index\":0,\"value\":4001536,\"op\":\"SCMP_CMP_EQ\"}]},{\"comment\":\"Return ENOSYS so thread creation falls back to clone, as observed.\",\"names\":[\"clone3\"],\"action\":\"SCMP_ACT_ERRNO\",\"errnoRet\":38},{\"comment\":\"AF_UNIX sockets observed during name-service checks.\",\"names\":[\"socket\"],\"action\":\"SCMP_ACT_ALLOW\",\"args\":[{\"index\":0,\"value\":1,\"op\":\"SCMP_CMP_EQ\"}]},{\"comment\":\"AF_INET sockets observed during application networking.\",\"names\":[\"socket\"],\"action\":\"SCMP_ACT_ALLOW\",\"args\":[{\"index\":0,\"value\":2,\"op\":\"SCMP_CMP_EQ\"}]},{\"comment\":\"Runtime startup compatibility: descriptor cleanup and filesystem checks. These were not captured in app.strace.\",\"names\":[\"close_range\",\"fstatfs\",\"openat2\",\"statx\"],\"action\":\"SCMP_ACT_ALLOW\"}],\"flags\":[\"SECCOMP_FILTER_FLAG_LOG\"]}"
+      ],
+      "UTSMode": "",
+      "UsernsMode": "",
+      "ShmSize": 67108864,
+      "Runtime": "runc",
+      "Isolation": "",
+      "CpuShares": 0,
+      "Memory": 0,
+      "NanoCpus": 0,
+      "CgroupParent": "",
+      "BlkioWeight": 0,
+      "BlkioWeightDevice": [],
+      "BlkioDeviceReadBps": [],
+      "BlkioDeviceWriteBps": [],
+      "BlkioDeviceReadIOps": [],
+      "BlkioDeviceWriteIOps": [],
+      "CpuPeriod": 0,
+      "CpuQuota": 0,
+      "CpuRealtimePeriod": 0,
+      "CpuRealtimeRuntime": 0,
+      "CpusetCpus": "",
+      "CpusetMems": "",
+      "Devices": [],
+      "DeviceCgroupRules": null,
+      "DeviceRequests": null,
+      "MemoryReservation": 0,
+      "MemorySwap": 0,
+      "MemorySwappiness": null,
+      "OomKillDisable": null,
+      "PidsLimit": null,
+      "Ulimits": null,
+      "CpuCount": 0,
+      "CpuPercent": 0,
+      "IOMaximumIOps": 0,
+      "IOMaximumBandwidth": 0,
+      "MaskedPaths": [
+        "/proc/acpi",
+        "/proc/asound",
+        "/proc/interrupts",
+        "/proc/kcore",
+        "/proc/keys",
+        "/proc/latency_stats",
+        "/proc/sched_debug",
+        "/proc/scsi",
+        "/proc/timer_list",
+        "/proc/timer_stats",
+        "/sys/devices/virtual/powercap",
+        "/sys/firmware"
+      ],
+      "ReadonlyPaths": [
+        "/proc/bus",
+        "/proc/fs",
+        "/proc/irq",
+        "/proc/sys",
+        "/proc/sysrq-trigger"
+      ]
+    },
+    "Storage": {
+      "RootFS": {
+        "Snapshot": {
+          "Name": "overlayfs"
+        }
+      }
+    },
+    "Mounts": [],
+    "Config": {
+      "Hostname": "32582afc38fe",
+      "Domainname": "",
+      "User": "appuser",
+      "AttachStdin": false,
+      "AttachStdout": false,
+      "AttachStderr": false,
+      "ExposedPorts": {
+        "5000/tcp": {}
+      },
+      "Tty": false,
+      "OpenStdin": false,
+      "StdinOnce": false,
+      "Env": [
+        "PATH=/opt/venv/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "LANG=C.UTF-8",
+        "GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D",
+        "PYTHON_VERSION=3.11.18",
+        "PYTHON_SHA256=9120e0a653868f6e3698d36cdd99e5a58903ec9469e448f21d98f7b16d8fa290",
+        "PYTHONDONTWRITEBYTECODE=1",
+        "PYTHONUNBUFFERED=1"
+      ],
+      "Cmd": [
+        "python",
+        "app/app.py"
+      ],
+      "Image": "ia462-midterm:ci-ready",
+      "Volumes": null,
+      "WorkingDir": "/app",
+      "Entrypoint": null,
+      "Labels": {},
+      "StopSignal": "SIGINT"
+    },
+    "NetworkSettings": {
+      "SandboxID": "eeea67263fd5d8ef9a01d9426c1da03debe4f56c58e3b691da1411d06b255bdd",
+      "SandboxKey": "/var/run/docker/netns/eeea67263fd5",
+      "Ports": {
+        "5000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "5002"
+          }
+        ]
+      },
+      "Networks": {
+        "bridge": {
+          "IPAMConfig": null,
+          "Links": null,
+          "Aliases": null,
+          "DriverOpts": null,
+          "GwPriority": 0,
+          "NetworkID": "08c3f38647b2f9400224bf9e92791a7e8df2eef049ef7e3512565d0caf81332a",
+          "EndpointID": "a8ce7bed5cff53d2c146ed2c74be1cf8d6c91728b3ffdbc20cb349a5c97839f1",
+          "Gateway": "[REDACTED_PRIVATE_IP]",
+          "IPAddress": "[REDACTED_PRIVATE_IP]",
+          "MacAddress": "[REDACTED_MAC]",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "DNSNames": null
+        }
+      }
+    },
+    "ImageManifestDescriptor": {
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "digest": "sha256:25309ff0bdd2e4168575625322bc98480c8299b2a9d4b44c0bb09d869cdacd10",
+      "size": 2191,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      }
+    }
+  }
+]

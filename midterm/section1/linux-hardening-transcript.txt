@@ -1,0 +1,2664 @@
+Script started on 2026-11-23 15:11:54-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo groupadd -f ia462lab
+
+
+if ! id ia462student >/dev/null 2>&1; then
+
+  sudo useradd --create-home --gid ia462lab --shell /bin/bash ia462student
+
+fi
+
+
+id ia462student
+
+groups ia462student
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo groupadd -f ia462lab
+
+
+if ! id ia462student >/dev/null 2>&1; then
+
+  sudo useradd --create-home --gid ia462lab --shell /bin/bash ia462student
+
+fi
+
+
+id ia462student
+
+groups ia462student
+
+[sudo: authenticate] Password: 
+uid=1002(ia462student) gid=1003(ia462lab) groups=1003(ia462lab)
+ia462student : ia462lab
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo cp -a /etc/profile "/etc/profile.ia462-backup-$(date +%Y%m%d-%H%M%S)" &&
+
+printf '\n# IA462 midterm default permissions\numask 027\n' |
+
+sudo tee -a /etc/profile
+
+
+tail -n 6 /etc/profile
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo cp -a /etc/profile "/etc/profile.ia462-backup-$(date +%Y%m%d-%H%M%S)" &&
+
+printf '\n# IA462 midterm default permissions\numask 027\n' |
+
+sudo tee -a /etc/profile
+
+
+tail -n 6 /etc/profile
+
+
+
+# IA462 midterm default permissions
+
+umask 027
+
+  done
+  unset i
+fi
+
+# IA462 midterm default permissions
+umask 027
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo -iu ia462student bash -c '
+
+umask
+
+umask_test_dir=$(mktemp -d "$HOME/ia462-umask.XXXXXX") || exit 1
+
+touch "$umask_test_dir/file.txt"
+
+mkdir "$umask_test_dir/directory"
+
+stat -c "%a %A %n" "$umask_test_dir/file.txt" "$umask_test_dir/directory"
+
+'
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo -iu ia462student bash -c '
+
+umask
+
+umask_test_dir=$(mktemp -d "$HOME/ia462-umask.XXXXXX") || exit 1
+
+touch "$umask_test_dir/file.txt"
+
+mkdir "$umask_test_dir/directory"
+
+stat -c "%a %A %n" "$umask_test_dir/file.txt" "$umask_test_dir/directory"
+
+tail -n 6 /etc/profile
+
+
+
+
+
+
+
+
+
+sudo cp -a /etc/profile "/etc/profile.ia462-backup-$(date +%Y%m%d-%H%M%S)" && printf '\n# IA462 midterm default permissitail -n 6 /etc/profile
+
+sudo -iu ia462student bash -c '
+
+umask
+
+umask_test_dir=$(mktemp -d "$HOME/ia462-umask.XXXXXX") || exit 1
+
+touch "$umask_test_dir/file.txt"
+
+mkdir "$umask_test_dir/directory"
+
+stat -c "%a %A %n" "$umask_test_dir/file.txt" "$umask_testtail -n 6 /etc/profile
+
+
+
+
+
+
+
+
+
+sudo -iu ia462student bash -c '
+
+umask
+
+umask_test_dir=$(mktemp -d "$HOME/ia462-umask.XXXXXX") || exit 1
+
+touch "$umask_test_dir/file.txt"
+
+mkdir "$umask_test_dir/directory"
+
+stat -c "%a %A %n" "$umask_test_dir/file.txt" "$umask_test_d
+
+sudo -iu ia462student bash -c '
+
+umask
+
+umask_test_dir=$(mktemp -d "$HOME/ia462-umask.XXXXXX") || exit 1
+
+touch "$umask_test_dir/file.txt"
+
+mkdir "$umask_test_dir/directory"
+
+stat -c "%a %A %n" "$umask_test_dir/file.txt" "$umask_test_d
+
+
+
+> ^C
+
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo -iu ia462student bash -c '
+
+umask
+
+umask_test_dir=$(mktemp -d "$HOME/ia462-umask.XXXXXX") || exit 1
+
+cd "$umask_test_dir" || exit 1
+
+touch file.txt
+
+mkdir directory
+
+stat -c "%a %A %n" file.txt directory
+
+'
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo -iu ia462student bash -c '
+
+umask
+
+umask_test_dir=$(mktemp -d "$HOME/ia462-umask.XXXXXX") || exit 1
+
+cd "$umask_test_dir" || exit 1
+
+touch file.txt
+
+mkdir directory
+
+stat -c "%a %A %n" file.txt directory
+
+'
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo -H -u ia462student /bin/bash --login -s <<'CHECK'
+
+cd "$HOME" || exit 1
+
+id
+
+umask
+
+umask_test_dir=$(mktemp -d "$HOME/ia462-umask.XXXXXX") || exit 1
+
+cd "$umask_test_dir" || exit 1
+
+touch file.txt
+
+mkdir directory
+
+stat -c "%a %A %n" file.txt directory
+
+CHECK
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo -H -u ia462student /bin/bash --login -s <<'CHECK'
+
+cd "$HOME" || exit 1
+
+id
+
+umask
+
+umask_test_dir=$(mktemp -d "$HOME/ia462-umask.XXXXXX") || exit 1
+
+cd "$umask_test_dir" || exit 1
+
+touch file.txt
+
+mkdir directory
+
+stat -c "%a %A %n" file.txt directory
+
+CHECK
+
+uid=1002(ia462student) gid=1003(ia462lab) groups=1003(ia462lab)
+
+0027
+
+640 -rw-r----- file.txt
+
+750 drwxr-x--- directory
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ findmnt -o TARGET,FSTYPEfindmnt -o TARGET,FSTYPE
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ findmnt -o TARGET,FSTYPEfindmnt -o TARG
+findmnt -o TARGET,FSTYPEfindmnt -o TARGET,FSTYPEfindmnt -o TARGET,FSTYPEfindmnt -o TARG
+findmnt -o TARGET,FSTYPEfindmnt -o TARGET,FSTYPEfindmnt -o TARGET,FSTYPEfindmnt -o TARG
+findm
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo -H -u ia462student /bin/bash --login -s <<'CHECK'
+
+cd "$HOME" || exit 1                                                                                                    id                                                                                                                      umask          
+
+umask_test_dir=$(mktemp -d "$HOME/ia462-umask.XXXXXX") || exit 1
+
+cd "$umask_test_dir" || exit 1
+
+touch file.txt
+
+mkdir directory
+
+stat -c "%a %A %n" file.txt directory
+
+CHECK
+
+findmnt -o TARGET,FSTYPEfindmnt -o TARGET,FSTYPEfindmnt -o TARGET,FSTYPEfindmnt -o TARGET,FSTYPEfindmnt -o TARGET,FSTYPEfindmnt -o TARGET,FSTYPEfindmnt -o TARGET,FSTYPEfindmnt -o TARGET,FSTYPEfindmnt -o TARGET,FSTYPEfindmnt -o TARGET,FSTYPEfindmnt -o TARGET,FSTYPEfindmnt -o TARGET,FSTYPEfindmnt -o TARGET,FSTYPEfindm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo -H -u ia462student /bin/bash --login -s <<'CHECK'
+
+cd "$HOME" || exit 1                                                                                                    id                                                                                                                      umask          
+
+umask_test_dir=$(mktemp -d "$HOME/ia462-umask.XXXXXX") || exit 1
+
+cd "$umask_test_dir" || exit 1
+
+touch file.txt
+
+mkdir directory
+
+stat -c "%a %A %n" file.txt directory
+
+CHECK
+
+iu ia462student bash -c 
+
+umask               
+
+umask_test_dir=$(mktemp -d "$HOME/ia462-umask.XXXXXX") || exit 1
+
+cd "$umask_test_dir" || exit 1
+
+touch file.txt                                                  
+
+mkdir directory
+
+stat -c "%a %A %n" file.txt directory
+
+'
+
+
+
+
+
+
+touch "$umask_test_dir/file.txt"
+
+mkdir "$umask_test_dir/directory"
+
+stat -c "%a %A %n" "$umask_test_dir/file.txt" "$umask_test_d
+
+
+
+tail -n 6 /etc/profile
+
+
+
+
+
+
+
+
+
+
+
+sudo cp -a /etc/profile "/etc/profile.ia462-backup-$(date +%Y%m%d-%H%M%S)" && printf '\n# IA462 midterm default permissitail -n 6 /etc/profile
+
+findmnt -o TARGET,FSTYPE
+
+TARGET                                               FSTYPE
+/                                                    ext4
+├─/usr/lib/modules/6.18.33.2-microsoft-standard-WSL2 overlay
+├─/mnt/wsl                                           tmpfs
+├─/usr/lib/wsl/drivers                               9p
+├─/mnt/wslg                                          tmpfs
+│ ├─/mnt/wslg/distro                                 ext4
+│ ├─/mnt/wslg/versions.txt                           overlay
+│ ├─/mnt/wslg/doc                                    overlay
+│ └─/mnt/wslg/run/user/1000                          tmpfs
+├─/usr/lib/wsl/lib                                   overlay
+├─/init                                              rootfs
+├─/dev                                               devtmpfs
+│ ├─/dev/pts                                         devpts
+│ ├─/dev/shm                                         tmpfs
+│ ├─/dev/mqueue                                      mqueue
+│ └─/dev/hugepages                                   hugetlbfs
+├─/sys                                               sysfs
+│ ├─/sys/fs/cgroup                                   cgroup2
+│ ├─/sys/kernel/tracing                              tracefs
+│ ├─/sys/kernel/debug                                debugfs
+│ ├─/sys/kernel/config                               configfs
+│ └─/sys/fs/fuse/connections                         fusectl
+├─/proc                                              proc
+│ └─/proc/sys/fs/binfmt_misc                         binfmt_misc
+├─/run                                               tmpfs
+│ ├─/run/lock                                        tmpfs
+│ ├─/run/shm                                         tmpfs
+│ ├─/run/user                                        tmpfs
+│ │ └─/run/user                                      tmpfs
+│ │   └─/run/user/1000                               tmpfs
+│ ├─/run/credentials/systemd-journald.service        tmpfs
+│ ├─/run/credentials/systemd-resolved.service        tmpfs
+│ └─/run/credentials/[REDACTED_EMAIL]              tmpfs
+├─/tmp/.X11-unix                                     tmpfs
+├─/mnt/c                                             9p
+├─/tmp                                               tmpfs
+│ └─/tmp/.X11-unix                                   tmpfs
+└─/var/lib/docker                                    ext4
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ 
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo find / -type f -perm -4000 > suid-binaries.txt 2> suid-scan-errors.txt
+
+
+sudo find / -type f -perm -0002 > world-writable.txt 2> wosudo find / -type f -perm -4000 > suid-binaries.txt 2> suid-scan-errors.txt
+
+
+sudo find / -type f -perm -0002 > world-writable.txt 2> world-writable-scan-errors.txt
+
+^C
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo find / -xdev -type f -perm -4000 > suid-linux.txt 2> suid-linux-errors.txt
+
+
+sudo find / -xdev -type f -perm -0002 > world-writable-linux.txt 2> world-writable-linux-errors.txt
+
+
+wc -l suid-linux.txt world-writable-linux.txt
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo find / -xdev -type f -perm -4000 > suid-linux.txt 2> suid-linux-errors.txt
+
+
+sudo find / -xdev -type f -perm -0002 > world-writable-linux.txt 2> world-writable-linux-errors.txt
+
+
+wc -l suid-linux.txt world-writable-linux.txt
+
+  63 suid-linux.txt
+   0 world-writable-linux.txt
+  63 total
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ wc -l suid-linux-errors.txt world-writable-linux-errors.txt
+
+
+systemctl list-units --type=service --state=running --no-pager | tee services-before.txt
+
+
+systemctl list-unit-files --type=service --state=enabled -wc -l suid-linux-errors.txt world-writable-linux-errors.txt
+
+
+systemctl list-units --type=service --state=running --no-pager | tee services-before.txt
+
+
+systemctl list-unit-files --type=service --state=enabled --no-pager | tee services-enabled-before.txt
+
+0 suid-linux-errors.txt
+0 world-writable-linux-errors.txt
+0 total
+  UNIT                        LOAD   ACTIVE SUB     DESCRIPTION
+  chrony.service              loaded active running chrony, an NTP client/server
+  containerd.service          loaded active running containerd container runtime
+  cron.service                loaded active running Regular background program processing daemon
+  dbus.service                loaded active running D-Bus System Message Bus
+  docker.service              loaded active running Docker Application Container Engine
+  [REDACTED_EMAIL]          loaded active running Getty on tty1
+  networkd-dispatcher.service loaded active running Dispatcher daemon for systemd-networkd
+  packagekit.service          loaded active running PackageKit Daemon
+  polkit.service              loaded active running Authorization Manager
+  rsyslog.service             loaded active running System Logging Service
+  systemd-journald.service    loaded active running Journal Service
+  systemd-logind.service      loaded active running User Login Management
+  systemd-resolved.service    loaded active running Network Name Resolution
+  systemd-udevd.service       loaded active running Rule-based Manager for Device Events and Files
+  unattended-upgrades.service loaded active running Unattended Upgrades Shutdown
+  [REDACTED_EMAIL]           loaded active running User Manager for UID 1000
+
+Legend: LOAD   → Reflects whether the unit definition was properly loaded.
+        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.
+        SUB    → The low-level unit activation state, values depend on unit type.
+
+16 loaded units listed.
+UNIT FILE                              STATE   PRESET
+apparmor.service                       enabled enabled
+apport.service                         enabled enabled
+chrony.service                         enabled enabled
+cloud-config.service                   enabled enabled
+cloud-final.service                    enabled enabled
+cloud-init-local.service               enabled enabled
+cloud-init-main.service                enabled enabled
+cloud-init-network.service             enabled enabled
+console-setup.service                  enabled enabled
+containerd.service                     enabled enabled
+cron.service                           enabled enabled
+dmesg.service                          enabled enabled
+docker.service                         enabled enabled
+e2scrub_reap.service                   enabled enabled
+getty@.service                         enabled enabled
+keyboard-setup.service                 enabled enabled
+landscape-client.service               enabled enabled
+netplan-configure.service              enabled enabled
+networkd-dispatcher.service            enabled enabled
+rsyslog.service                        enabled enabled
+setvtrgb.service                       enabled enabled
+snapd.apparmor.service                 enabled enabled
+snapd.autoimport.service               enabled enabled
+snapd.core-fixup.service               enabled enabled
+snapd.recovery-chooser-trigger.service enabled enabled
+snapd.seeded.service                   enabled enabled
+snapd.service                          enabled enabled
+snapd.system-shutdown.service          enabled enabled
+systemd-pstore.service                 enabled enabled
+systemd-resolved.service               enabled enabled
+ua-reboot-cmds.service                 enabled enabled
+ubuntu-advantage.service               enabled enabled
+unattended-upgrades.service            enabled enabled
+
+33 unit files listed.
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ 
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ 
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ 
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ 
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ 
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ 
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ systemctl show apport.service landscape-client.service -p Id -p ActiveState -p UnitFileState | tee services-selected-before.txt
+
+
+sudo systemctl disable --now apport.service landscape-client.service
+
+
+systemctl show apport.service landscape-client.service -p Id -p ActiveState -p UnitFileState | tee services-selected-after.txt
+
+
+
+
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ systemctl show apport.service landscape-client.service -p Id -p ActiveState -p UnitFileState | tee services-selected-before.txt
+
+
+sudo systemctl disable --now apport.service landscape-client.service
+
+
+systemctl show apport.service landscape-client.service -p Id -p ActiveState -p UnitFileState | tee services-selected-after.txt
+
+
+
+
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ systemctl show apport.service landscape-client.service -p Id -p ActiveState -p UnitFileState | tee services-selected-before.txt
+
+
+sudo systemctl disable --now apport.service landscape-client.service
+
+
+systemctl show apport.service landscape-client.service -p Id -p ActiveState -p UnitFileState | tee services-selected-after.txt
+
+
+
+
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ systemctl show apport.service landscape-client.service -p Id -p ActiveState -p UnitFileState | tee services-selected-before.txt
+
+
+sudo systemctl disable --now apport.service landscape-client.service
+
+
+systemctl show apport.service landscape-client.service -p Id -p ActiveState -p UnitFileState | tee services-selected-after.txt
+
+
+
+
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ systemctl show apport.service landscape-client.service -p Id -p ActiveState -p UnitFileState | tee services-selected-before.txt
+
+
+sudo systemctl disable --now apport.service landscape-client.service
+
+
+systemctl show apport.service landscape-client.service -p Id -p ActiveState -p UnitFileState | tee services-selected-after.txt
+
+
+
+
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ systemctl show apport.service landscape-client.service -p Id -p ActiveState -p UnitFileState | tee services-selected-before.txt
+
+
+sudo systemctl disable --now apport.service landscape-client.service
+
+
+systemctl show apport.service landscape-client.service -p Id -p ActiveState -p UnitFileState | tee services-selected-after.txt
+
+
+
+
+
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ systemctl show apport.service landscape-client.service -p Id -p ActiveState -p UnitFileState | tee services-selected-before.txt
+
+
+sudo systemctl disable --now apport.service landscape-client.service
+
+
+systemctl show apport.service landscape-client.service -p Id -p ActiveState -p UnitFileState | tee services-selected-after.txt
+
+
+
+
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ systemctl show apport.service landscape-client.service -p Id -p ActiveState -p UnitFileState | tee services-selected-before.txt
+
+
+sudo systemctl disable --now apport.service landscape-client.service
+
+
+systemctl show apport.service landscape-client.service -p Id -p ActiveState -p UnitFileState | tee services-selected-after.txt
+systemctl show apport.service landscape-client.service -p Id -p ActiveState -p UnitFileState | tee services-selected-before.txt
+
+
+sudo systemctl disable --now apport.service landscape-client.service
+
+
+systemctl show apport.service landscape-client.service -p Id -p ActiveState -p UnitFileState | tee services-selected-after.txt
+
+Id=apport.service
+ActiveState=inactive
+UnitFileState=enabled
+
+Id=landscape-client.service
+ActiveState=inactive
+UnitFileState=enabled
+Synchronizing state of apport.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+
+Executing: /usr/lib/systemd/systemd-sysv-install disable apport
+
+Removed '/etc/systemd/system/multi-user.target.wants/landscape-client.service'.
+
+Removed '/etc/systemd/system/multi-user.target.wants/apport.service'.
+
+Id=apport.service
+ActiveState=inactive
+UnitFileState=disabled
+
+Id=landscape-client.service
+ActiveState=inactive
+UnitFileState=disabled
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ echo "Before"
+
+cat services-selected-before.txt
+
+
+echo "After"
+
+cat services-selected-after.txt
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ echo "Before"
+
+cat services-selected-before.txt
+
+
+echo "After"
+
+cat services-selected-after.txt
+
+Before
+Id=apport.service
+ActiveState=inactive
+UnitFileState=enabled
+
+Id=landscape-client.service
+ActiveState=inactive
+UnitFileState=enabled
+After
+Id=apport.service
+ActiveState=inactive
+UnitFileState=disabled
+
+Id=landscape-client.service
+ActiveState=inactive
+UnitFileState=disabled
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ dpkg -l openssh-server
+
+
+systemctl status ssh.service ssh.socket --no-pager
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ dpkg -l openssh-server
+
+
+systemctl status ssh.service ssh.socket --no-pager
+
+=
++-- Desired=Unknown/Install/Remove/Purge/Hold
+|+- Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+||+ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||| Name           Version      Architecture Description
++++-==============-============-============-=================================
+un  openssh-server <none>       <none>       (no description available)
+
+>Unit ssh.service could not be found.
+
+Unit ssh.socket could not be found.
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo apt update && sudo apt install -y openssh-server
+
+
+0% [Working]
+            
+Get:1 http://security.ubuntu.com/ubuntu resolute-security InRelease [137 kB]
+
+0% [Connected to download.docker.com (13.32.205.44)] [Connecting to pkg.osquery.io] [Waiting for headers] [Waiting for headers] [1 InRelease 8192 B/137 kB 6%]
+                                                                                                                                                              
+Hit:2 http://archive.ubuntu.com/ubuntu resolute InRelease
+
+                                                                                                                                                              
+0% [Connected to download.docker.com (13.32.205.44)] [Connecting to pkg.osquery.io] [Waiting for headers] [1 InRelease 54.7 kB/137 kB 40%]
+                                                                                                                                          
+Hit:3 https://aquasecurity.github.io/trivy-repo/deb generic InRelease
+
+0% [Connected to download.docker.com (13.32.205.44)] [Connecting to pkg.osquery.io] [Waiting for headers] [1 InRelease 79.3 kB/137 kB 58%]
+                                                                                                                                          
+0% [Connected to download.docker.com (13.32.205.44)] [Connecting to pkg.osquery.io] [Waiting for headers] [1 InRelease 105 kB/137 kB 77%]
+                                                                                                                                         
+0% [Waiting for headers] [Connecting to pkg.osquery.io] [Waiting for headers] [1 InRelease 126 kB/137 kB 91%]
+                                                                                                             
+0% [Waiting for headers] [Connecting to pkg.osquery.io] [Waiting for headers]
+0% [Waiting for headers] [Connecting to pkg.osquery.io (3.162.163.66)] [Waiting for headers]
+                                                                                            
+Get:4 https://download.docker.com/linux/ubuntu resolute InRelease [32.5 kB]
+
+0% [4 InRelease 0 B/32.5 kB 0%] [Connecting to pkg.osquery.io (3.162.163.66)] [Waiting for headers] [Waiting for headers]
+                                                                                                                         
+0% [Connecting to pkg.osquery.io (3.162.163.66)] [Waiting for headers] [Waiting for headers]
+                                                                                            
+0% [Connected to pkg.osquery.io (3.162.163.66)] [Waiting for headers] [Waiting for headers]
+                                                                                           
+Get:5 http://security.ubuntu.com/ubuntu resolute-security/main amd64 Packages [746 kB]
+
+0% [Waiting for headers] [Connected to pkg.osquery.io (3.162.163.66)] [Waiting for headers] [5 Packages 0 B/746 kB 0%]
+                                                                                                                      
+Get:6 https://download.docker.com/linux/ubuntu resolute/stable amd64 Packages [34.8 kB]
+
+0% [6 Packages 15.9 kB/34.8 kB 46%] [Connected to pkg.osquery.io (3.162.163.66)] [Waiting for headers] [5 Packages 125 kB/746 kB 17%]
+                                                                                                                                     
+0% [Connected to pkg.osquery.io (3.162.163.66)] [Waiting for headers] [5 Packages 242 kB/746 kB 32%]
+                                                                                                    
+Get:7 http://archive.ubuntu.com/ubuntu resolute-updates InRelease [137 kB]
+
+0% [Connected to pkg.osquery.io (3.162.163.66)] [7 InRelease 63.3 kB/137 kB 46%] [5 Packages 242 kB/746 kB 32%]
+0% [6 Packages store 0 B] [Connected to pkg.osquery.io (3.162.163.66)] [7 InRelease 63.3 kB/137 kB 46%] [5 Packages 254 kB/746 kB 34%]
+                                                                                                                                      
+0% [Waiting for headers] [7 InRelease 63.3 kB/137 kB 46%] [5 Packages 393 kB/746 kB 53%]
+                                                                                        
+0% [Waiting for headers] [5 Packages 589 kB/746 kB 79%]
+                                                       
+0% [Waiting for headers] [Waiting for headers]
+0% [5 Packages store 0 B] [Waiting for headers] [Waiting for headers]
+0% [5 Packages store 0 B] [Waiting for headers] [Waiting for headers]
+0% [5 Packages store 0 B] [Waiting for headers] [Waiting for headers]
+                                                                     
+Get:9 http://security.ubuntu.com/ubuntu resolute-security/main Translation-en [162 kB]
+
+0% [5 Packages store 0 B] [Waiting for headers] [9 Translation-en 16.4 kB/162 kB 10%]
+                                                                                     
+0% [5 Packages store 0 B] [Waiting for headers] [Waiting for headers]
+                                                                     
+Get:10 http://security.ubuntu.com/ubuntu resolute-security/main amd64 Components [46.7 kB]
+
+0% [5 Packages store 0 B] [Waiting for headers] [10 Components-amd64 16.4 kB/46.7 kB 35%]
+                                                                                         
+0% [5 Packages store 0 B] [Waiting for headers] [Waiting for headers]
+                                                                     
+Get:11 http://security.ubuntu.com/ubuntu resolute-security/universe amd64 Packages [224 kB]
+
+0% [5 Packages store 0 B] [Waiting for headers] [11 Packages 0 B/224 kB 0%]
+                                                                           
+0% [Waiting for headers] [11 Packages 32.8 kB/224 kB 15%]
+0% [9 Translation-en store 0 B] [Waiting for headers] [11 Packages 49.2 kB/224 kB 22%]
+                                                                                      
+0% [9 Translation-en store 0 B] [Waiting for headers] [Waiting for headers]
+                                                                           
+Get:12 http://security.ubuntu.com/ubuntu resolute-security/universe Translation-en [73.2 kB]
+
+0% [9 Translation-en store 0 B] [Waiting for headers] [12 Translation-en 9477 B/73.2 kB 13%]
+                                                                                            
+0% [9 Translation-en store 0 B] [Waiting for headers] [Waiting for headers]
+                                                                           
+Get:13 http://security.ubuntu.com/ubuntu resolute-security/universe amd64 Components [62.8 kB]
+
+0% [9 Translation-en store 0 B] [Waiting for headers] [13 Components-amd64 13.8 kB/62.8 kB 22%]
+                                                                                               
+0% [9 Translation-en store 0 B] [Waiting for headers]
+                                                     
+0% [Waiting for headers] [Waiting for headers]
+0% [10 Components-amd64 store 0 B] [Waiting for headers] [Waiting for headers]
+                                                                              
+Get:14 http://security.ubuntu.com/ubuntu resolute-security/restricted amd64 Packages [611 kB]
+
+0% [10 Components-amd64 store 0 B] [Waiting for headers] [14 Packages 16.4 kB/611 kB 3%]
+                                                                                        
+0% [Waiting for headers] [14 Packages 129 kB/611 kB 21%]
+0% [11 Packages store 0 B] [Waiting for headers] [14 Packages 129 kB/611 kB 21%]
+                                                                                
+0% [Waiting for headers] [14 Packages 611 kB/611 kB 100%]
+0% [12 Translation-en store 0 B] [Waiting for headers] [14 Packages 611 kB/611 kB 100%]
+                                                                                       
+0% [12 Translation-en store 0 B] [Waiting for headers] [Waiting for headers]
+                                                                            
+Get:15 http://security.ubuntu.com/ubuntu resolute-security/restricted Translation-en [127 kB]
+
+0% [12 Translation-en store 0 B] [Waiting for headers] [15 Translation-en 4096 B/127 kB 3%]
+                                                                                           
+0% [Waiting for headers] [15 Translation-en 127 kB/127 kB 100%]
+0% [13 Components-amd64 store 0 B] [Waiting for headers] [15 Translation-en 127 kB/127 kB 100%]
+                                                                                               
+0% [13 Components-amd64 store 0 B] [Waiting for headers]
+0% [Connecting to pkg.osquerypackages.com] [Waiting for headers]
+0% [Connecting to pkg.osquerypackages.com] [14 Packages store 0 B] [Waiting for headers]
+                                                                                        
+Get:16 http://archive.ubuntu.com/ubuntu resolute-backports InRelease [137 kB]
+
+0% [Connecting to pkg.osquerypackages.com] [14 Packages store 0 B] [16 InRelease 11.2 kB/137 kB 8%]
+                                                                                                   
+0% [Connecting to pkg.osquerypackages.com] [16 InRelease 54.7 kB/137 kB 40%]
+0% [Connecting to pkg.osquerypackages.com] [15 Translation-en store 0 B] [16 InRelease 54.7 kB/137 kB 40%]
+                                                                                                          
+0% [Connecting to pkg.osquerypackages.com] [16 InRelease 114 kB/137 kB 84%]
+                                                                           
+0% [Connecting to pkg.osquerypackages.com]
+0% [Connecting to pkg.osquerypackages.com] [Waiting for headers]
+                                                                
+Get:17 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 Packages [913 kB]
+
+0% [Connecting to pkg.osquerypackages.com (104.21.44.46)] [17 Packages 0 B/913 kB 0%]
+                                                                                     
+0% [Connected to pkg.osquerypackages.com (104.21.44.46)] [Waiting for headers]
+0% [Connected to pkg.osquerypackages.com (104.21.44.46)] [17 Packages store 0 B] [Waiting for headers]
+                                                                                                      
+Get:18 http://archive.ubuntu.com/ubuntu resolute-updates/main Translation-en [201 kB]
+
+0% [Connected to pkg.osquerypackages.com (104.21.44.46)] [17 Packages store 0 B] [18 Translation-en 0 B/201 kB 0%]
+                                                                                                                  
+0% [Connected to pkg.osquerypackages.com (104.21.44.46)] [17 Packages store 0 B] [Waiting for headers]
+                                                                                                      
+Get:19 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 Components [110 kB]
+
+0% [Connected to pkg.osquerypackages.com (104.21.44.46)] [17 Packages store 0 B] [19 Components-amd64 29.6 kB/110 kB 27%]
+                                                                                                                         
+0% [Connected to pkg.osquerypackages.com (104.21.44.46)] [17 Packages store 0 B] [Waiting for headers]
+                                                                                                      
+Get:20 http://archive.ubuntu.com/ubuntu resolute-updates/universe amd64 Packages [393 kB]
+
+                                                                                                      
+0% [Waiting for headers] [17 Packages store 0 B] [20 Packages 4864 B/393 kB 1%]
+                                                                               
+0% [Waiting for headers] [17 Packages store 0 B] [Waiting for headers]
+                                                                      
+Get:21 http://archive.ubuntu.com/ubuntu resolute-updates/universe Translation-en [124 kB]
+
+0% [Waiting for headers] [17 Packages store 0 B] [21 Translation-en 22.3 kB/124 kB 18%]
+                                                                                       
+0% [Waiting for headers] [17 Packages store 0 B] [Waiting for headers]
+                                                                      
+Get:22 http://archive.ubuntu.com/ubuntu resolute-updates/universe amd64 Components [201 kB]
+
+0% [Waiting for headers] [17 Packages store 0 B] [22 Components-amd64 12.3 kB/201 kB 6%]
+                                                                                        
+0% [Waiting for headers] [17 Packages store 0 B] [Waiting for headers]
+                                                                      
+0% [Waiting for headers] [Waiting for headers]
+0% [Waiting for headers] [18 Translation-en store 0 B] [Waiting for headers]
+                                                                            
+Get:23 http://archive.ubuntu.com/ubuntu resolute-updates/restricted amd64 Packages [639 kB]
+
+0% [Waiting for headers] [18 Translation-en store 0 B] [23 Packages 5728 B/639 kB 1%]
+                                                                                     
+0% [Waiting for headers] [23 Packages 639 kB/639 kB 100%]
+0% [Waiting for headers] [19 Components-amd64 store 0 B] [23 Packages 639 kB/639 kB 100%]
+                                                                                         
+0% [Waiting for headers] [19 Components-amd64 store 0 B] [Waiting for headers]
+                                                                              
+Get:24 http://archive.ubuntu.com/ubuntu resolute-updates/restricted Translation-en [132 kB]
+
+0% [Waiting for headers] [19 Components-amd64 store 0 B] [24 Translation-en 8192 B/132 kB 6%]
+                                                                                             
+0% [Waiting for headers] [19 Components-amd64 store 0 B] [Waiting for headers]
+                                                                              
+0% [Waiting for headers] [Waiting for headers]
+0% [Waiting for headers] [20 Packages store 0 B] [Waiting for headers]
+                                                                      
+Get:25 http://archive.ubuntu.com/ubuntu resolute-backports/universe amd64 Components [1056 B]
+
+0% [Waiting for headers] [20 Packages store 0 B] [25 Components-amd64 0 B/1056 B 0%]
+                                                                                    
+0% [Waiting for headers] [20 Packages store 0 B]
+                                                
+0% [Waiting for headers]
+0% [Waiting for headers] [21 Translation-en store 0 B]
+                                                      
+0% [Waiting for headers]
+0% [Waiting for headers] [22 Components-amd64 store 0 B]
+                                                        
+0% [Waiting for headers]
+0% [Waiting for headers] [23 Packages store 0 B]
+                                                
+0% [Waiting for headers]
+0% [Waiting for headers] [24 Translation-en store 0 B]
+                                                      
+0% [Waiting for headers]
+0% [Waiting for headers] [25 Components-amd64 store 0 B]
+                                                        
+0% [Waiting for headers]
+                        
+Hit:8 https://pkg.osquerypackages.com/deb deb InRelease
+
+                        
+0% [Working]
+100% [Working]
+              
+Fetched 5245 kB in 1s (5318 kB/s)
+
+Reading package lists... 0%
+
+Reading package lists... 0%
+
+Reading package lists... 0%
+
+Reading package lists... 0%
+
+Reading package lists... 0%
+
+Reading package lists... 0%
+
+Reading package lists... 0%
+
+Reading package lists... 0%
+
+Reading package lists... 0%
+
+Reading package lists... 5%
+
+Reading package lists... 5%
+
+Reading package lists... 7%
+
+Reading package lists... 7%
+
+Reading package lists... 52%
+
+Reading package lists... 56%
+
+Reading package lists... 56%
+
+Reading package lists... 77%
+
+Reading package lists... 77%
+
+Reading package lists... 78%
+
+Reading package lists... 78%
+
+Reading package lists... 78%
+
+Reading package lists... 78%
+
+Reading package lists... 79%
+
+Reading package lists... 79%
+
+Reading package lists... 80%
+
+Reading package lists... 80%
+
+Reading package lists... 83%
+
+Reading package lists... 83%
+
+Reading package lists... 84%
+
+Reading package lists... 84%
+
+Reading package lists... 86%
+
+Reading package lists... 86%
+
+Reading package lists... 86%
+
+Reading package lists... 86%
+
+Reading package lists... 89%
+
+Reading package lists... 89%
+
+Reading package lists... 90%
+
+Reading package lists... 90%
+
+Reading package lists... 90%
+
+Reading package lists... 90%
+
+Reading package lists... 90%
+
+Reading package lists... 90%
+
+Reading package lists... 90%
+
+Reading package lists... 90%
+
+Reading package lists... 90%
+
+Reading package lists... 90%
+
+Reading package lists... 93%
+
+Reading package lists... 93%
+
+Reading package lists... 94%
+
+Reading package lists... 94%
+
+Reading package lists... 95%
+
+Reading package lists... 95%
+
+Reading package lists... 95%
+
+Reading package lists... 95%
+
+Reading package lists... 98%
+
+Reading package lists... 98%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+                             
+
+Building dependency tree... 0%
+
+Building dependency tree... 0%
+
+Building dependency tree... 0%
+
+Building dependency tree... 50%
+
+Building dependency tree... 50%
+                                
+
+Reading state information... 0%
+
+Reading state information... 0%
+                                
+52 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+Reading package lists... 0%
+
+Reading package lists... 100%
+                              
+
+Building dependency tree... 0%
+
+Building dependency tree... 0%
+
+Building dependency tree... 50%
+
+Building dependency tree... 50%
+                                
+
+Reading state information... 0%
+
+Reading state information... 0%
+                                
+
+Solving dependencies... 0%
+
+Solving dependencies... 10%
+                            
+Installing:
+  openssh-server
+
+Installing dependencies:
+  libwrap0  ncurses-term  openssh-sftp-server  ssh-import-id
+
+Suggested packages:
+  molly-guard  monkeysphere  ssh-askpass  ufw
+
+Summary:
+  Upgrading: 0, Installing: 5, Removing: 0, Not Upgrading: 52
+  Download size: 998 kB
+  Space needed: 7694 kB / 1017 GB available
+
+
+0% [Working]
+            
+Get:1 http://archive.ubuntu.com/ubuntu resolute/main amd64 libwrap0 amd64 7.6.q-36build2 [48.5 kB]
+
+1% [1 libwrap0 15.4 kB/48.5 kB 32%]
+                                   
+8% [Working]
+            
+Get:2 http://archive.ubuntu.com/ubuntu resolute/main amd64 ncurses-term all 6.6+20251231-1 [280 kB]
+
+9% [2 ncurses-term 15.6 kB/280 kB 6%]
+                                     
+34% [Waiting for headers]
+                         
+Get:3 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 openssh-sftp-server amd64 1:10.2p1-2ubuntu3.8 [37.4 kB]
+
+34% [3 openssh-sftp-server 0 B/37.4 kB 0%]
+                                          
+41% [Waiting for headers]
+                         
+Get:4 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 openssh-server amd64 1:10.2p1-2ubuntu3.8 [622 kB]
+
+43% [4 openssh-server 16.4 kB/622 kB 3%]
+                                        
+95% [Waiting for headers]
+                         
+Get:5 http://archive.ubuntu.com/ubuntu resolute/main amd64 ssh-import-id all 5.11-0ubuntu4 [10.2 kB]
+
+95% [5 ssh-import-id 0 B/10.2 kB 0%]
+                                    
+100% [Working]
+              
+Fetched 998 kB in 0s (4200 kB/s)
+Preconfiguring packages ...
+
+78Selecting previously unselected package libwrap0:amd64.
+(Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 37184 files and directories currently installed.)
+Preparing to unpack .../libwrap0_7.6.q-36build2_amd64.deb ...
+7Progress: [  0%] [                                                                                                                                                                                          ] 87Progress: [  5%] [████████▊                                                                                                                                                                                 ] 8Unpacking libwrap0:amd64 (7.6.q-36build2) ...
+7Progress: [ 10%] [█████████████████▋                                                                                                                                                                        ] 8Selecting previously unselected package ncurses-term.
+Preparing to unpack .../ncurses-term_6.6+20251231-1_all.deb ...
+7Progress: [ 14%] [██████████████████████████▌                                                                                                                                                               ] 8Unpacking ncurses-term (6.6+20251231-1) ...
+7Progress: [ 19%] [███████████████████████████████████▍                                                                                                                                                      ] 8Selecting previously unselected package openssh-sftp-server.
+Preparing to unpack .../openssh-sftp-server_1%3a10.2p1-2ubuntu3.8_amd64.deb ...
+7Progress: [ 24%] [████████████████████████████████████████████▎                                                                                                                                             ] 8Unpacking openssh-sftp-server (1:10.2p1-2ubuntu3.8) ...
+7Progress: [ 29%] [█████████████████████████████████████████████████████▏                                                                                                                                    ] 8Selecting previously unselected package openssh-server.
+Preparing to unpack .../openssh-server_1%3a10.2p1-2ubuntu3.8_amd64.deb ...
+7Progress: [ 33%] [█████████████████████████████████████████████████████████████▉                                                                                                                            ] 8Unpacking openssh-server (1:10.2p1-2ubuntu3.8) ...
+7Progress: [ 38%] [██████████████████████████████████████████████████████████████████████▊                                                                                                                   ] 8Selecting previously unselected package ssh-import-id.
+Preparing to unpack .../ssh-import-id_5.11-0ubuntu4_all.deb ...
+7Progress: [ 43%] [███████████████████████████████████████████████████████████████████████████████▋                                                                                                          ] 8Unpacking ssh-import-id (5.11-0ubuntu4) ...
+7Progress: [ 48%] [████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                 ] 8Setting up openssh-sftp-server (1:10.2p1-2ubuntu3.8) ...
+7Progress: [ 52%] [█████████████████████████████████████████████████████████████████████████████████████████████████▍                                                                                        ] 87Progress: [ 57%] [██████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                                               ] 8Setting up ssh-import-id (5.11-0ubuntu4) ...
+7Progress: [ 62%] [███████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                                                                      ] 87Progress: [ 67%] [███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                                                              ] 8Setting up libwrap0:amd64 (7.6.q-36build2) ...
+7Progress: [ 71%] [████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                                     ] 87Progress: [ 76%] [█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                            ] 8Setting up ncurses-term (6.6+20251231-1) ...
+7Progress: [ 81%] [██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                   ] 87Progress: [ 86%] [███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                          ] 8Setting up openssh-server (1:10.2p1-2ubuntu3.8) ...
+7Progress: [ 90%] [████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                 ] 8Creating config file /etc/ssh/sshd_config with new version
+Creating SSH2 RSA key; this may take some time ...
+3072 SHA256:jUZAGXU1HMAyfXJOhnZ3tAa2SAeJfSYk4dOmUDv6P7E root@[REDACTED_HOST] (RSA)
+Creating SSH2 ECDSA key; this may take some time ...
+256 SHA256:y2uDLKAmmSocYWqq2rMDJScjG/QBuShsvzo5PvuiYso root@[REDACTED_HOST] (ECDSA)
+Creating SSH2 ED25519 key; this may take some time ...
+256 SHA256:cqtGAVndNdTh64n7EuBsdU91SA7XwqQjV4Yc7UOXEvw root@[REDACTED_HOST] (ED25519)
+Creating user 'sshd' (sshd user) with UID 985 and GID 65534.
+
+Created symlink '/etc/systemd/system/sockets.target.wants/ssh.socket' → '/usr/lib/systemd/system/ssh.socket'.
+
+Created symlink '/etc/systemd/system/ssh.service.requires/ssh.socket' → '/usr/lib/systemd/system/ssh.socket'.
+
+Created symlink '/etc/systemd/system/ssh.service.wants/sshd-keygen.service' → '/usr/lib/systemd/system/sshd-keygen.service'.
+
+Created symlink '/etc/systemd/system/sshd.service.wants/sshd-keygen.service' → '/usr/lib/systemd/system/sshd-keygen.service'.
+
+Created symlink '/etc/systemd/system/[REDACTED_EMAIL]/sshd-keygen.service' → '/usr/lib/systemd/system/sshd-keygen.service'.
+
+Created symlink '/etc/systemd/system/ssh.socket.wants/sshd-keygen.service' → '/usr/lib/systemd/system/sshd-keygen.service'.
+
+7Progress: [ 95%] [█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏        ] 8Processing triggers for man-db (2.13.1-1build1) ...
+Processing triggers for libc-bin (2.43-2ubuntu2.7) ...
+
+78wendel@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo grep -RnE 'Include|PermitRootLogin|MaxAuthTries|PermitEmptyPasswords|Match' /etc/ssh/sshd_config /etc/ssh/sshd_config.d
+
+
+systemctl status ssh.service ssh.socket --no-pager
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo grep -RnE 'Include|PermitRootLogin|MaxAuthTries|PermitEmptyPasswords|Match' /etc/ssh/sshd_config /etc/ssh/sshd_config.d
+
+
+systemctl status ssh.service ssh.socket --no-pager
+
+/etc/ssh/sshd_config:24:Include /etc/ssh/sshd_config.d/*.conf
+/etc/ssh/sshd_config:54:#PermitRootLogin prohibit-password
+/etc/ssh/sshd_config:56:#MaxAuthTries 6
+/etc/ssh/sshd_config:79:#PermitEmptyPasswords no
+/etc/ssh/sshd_config:104:# the setting of "PermitRootLogin prohibit-password".
+/etc/ssh/sshd_config:141:#Match User anoncvs
+○ ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/usr/lib/systemd/system/ssh.service; disabled; preset: enabled)
+     Active: inactive (dead)
+TriggeredBy: ● ssh.socket
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+
+● ssh.socket - OpenBSD Secure Shell server socket
+     Loaded: loaded (/usr/lib/systemd/system/ssh.socket; enabled; preset: enabled)
+     Active: active (listening) since Mon 2026-11-23 15:54:20 EST; 3s ago
+ Invocation: 39004fde1d7f405db0a291ba6b364f5b
+   Triggers: ● ssh.service
+     Listen: 0.0.0.0:22 (Stream)
+             [::]:22 (Stream)
+      Tasks: 0 (limit: 4264)
+     Memory: 512K (peak: 512K)
+        CPU: 3ms
+     CGroup: /system.slice/ssh.socket
+
+Nov 23 15:54:20 [REDACTED_HOST] systemd[1]: Listening on ssh.socket - OpenBSD Secure Shell server socket.
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo cp -a /etc/ssh/sshd_config /etc/ssh/sshd_config.ia462-backup
+
+
+sudo sed -i 's/^#PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
+
+sudo sed -i 's/^#MaxAuthTries.*/MaxAuthTries 3/' /etc/ssh/sshd_config
+
+sudo sed -i 's/^#PermitEmptyPasswords.*/PermitEmptyPassworsudo cp -a /etc/ssh/sshd_config /etc/ssh/sshd_config.ia462-backup
+
+
+sudo sed -i 's/^#PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
+
+sudo sed -i 's/^#MaxAuthTries.*/MaxAuthTries 3/' /etc/ssh/sshd_config
+
+sudo sed -i 's/^#PermitEmptyPasswords.*/PermitEmptyPasswords no/' /etc/ssh/sshd_config
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo install -d -m 755 /run/sshd
+
+
+sudo /usr/sbin/sshd -t && sudo systemctl restart ssh.servisudo install -d -m 755 /run/sshd
+
+
+sudo /usr/sbin/sshd -t && sudo systemctl restart ssh.service
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo /usr/sbin/sshd -T | grep -E '^(permitrootlogin|maxauthtries|permitemptypasswords) ' | tee ssh-settings.txt
+
+
+systemctl status ssh.service --no-pager | tee ssh-status.txt
+
+
+sudo cat /etc/ssh/sshd_config > sshd_config.hardened
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo /usr/sbin/sshd -T | grep -E '^(permitrootlogin|maxauthtries|permitemptypasswords) ' | tee ssh-settings.txt
+
+
+systemctl status ssh.service --no-pager | tee ssh-status.txt
+
+
+sudo cat /etc/ssh/sshd_config > sshd_config.hardened
+
+maxauthtries 3
+permitrootlogin no
+permitemptypasswords no
+● ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/usr/lib/systemd/system/ssh.service; disabled; preset: enabled)
+     Active: active (running) since Mon 2026-11-23 15:57:22 EST; 6s ago
+ Invocation: 213f7fdb10154641a09a79b88091a46a
+TriggeredBy: ● ssh.socket
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+    Process: 6951 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+   Main PID: 6954 (sshd)
+      Tasks: 1 (limit: 4264)
+     Memory: 3.5M (peak: 4.1M)
+        CPU: 41ms
+     CGroup: /system.slice/ssh.service
+             └─6954 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+
+Nov 23 15:57:22 [REDACTED_HOST] systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Nov 23 15:57:22 [REDACTED_HOST] sshd[6954]: Server listening on 0.0.0.0 port 22.
+Nov 23 15:57:22 [REDACTED_HOST] sshd[6954]: Server listening on :: port 22.
+Nov 23 15:57:22 [REDACTED_HOST] systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo grep -vE '^[[:space:]]*(#|$)' /etc/pam.d/common-auth /etc/pam.d/common-account /etc/security/faillock.conf
+
+
+ls -l /usr/lib/x86_64-linux-gnu/security/pam_faillock.so
+
+
+ls /usr/share/pam-configs
+
+
+command -v faillock
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo grep -vE '^[[:space:]]*(#|$)' /etc/pam.d/common-auth /etc/pam.d/common-account /etc/security/faillock.conf
+
+
+ls -l /usr/lib/x86_64-linux-gnu/security/pam_faillock.so
+
+
+ls /usr/share/pam-configs
+
+
+command -v faillock
+
+/etc/pam.d/common-auth:auth	[success=1 default=ignore]	pam_unix.so nullok
+/etc/pam.d/common-auth:auth	requisite			pam_deny.so
+/etc/pam.d/common-auth:auth	required			pam_permit.so
+/etc/pam.d/common-auth:auth	optional			pam_cap.so 
+/etc/pam.d/common-account:account	[success=1 new_authtok_reqd=done default=ignore]	pam_unix.so 
+/etc/pam.d/common-account:account	requisite			pam_deny.so
+/etc/pam.d/common-account:account	required			pam_permit.so
+-rw-r--r-- 1 root root 26856 Aug 26 15:28 /usr/lib/x86_64-linux-gnu/security/pam_faillock.so
+capability  mkhomedir  systemd  unix
+/usr/sbin/faillock
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ 
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo cp -a /etc/pam.d/common-auth /etc/pam.d/common-auth.ia462-backup
+
+sudo cp -a /etc/security/faillock.conf /etc/security/faillock.conf.ia462-backup
+
+
+printf '\ndeny = 5\nfail_interval = 900\nunlock_time = 600\nsilent\n' | sudo tee -a /etc/security/faillock.conf
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo cp -a /etc/pam.d/common-auth /etc/pam.d/common-auth.ia462-backup
+
+sudo cp -a /etc/security/faillock.conf /etc/security/faillock.conf.ia462-backup
+
+
+printf '\ndeny = 5\nfail_interval = 900\nunlock_time = 600\nsilent\n' | sudo tee -a /etc/security/faillock.conf
+
+
+
+deny = 5
+
+fail_interval = 900
+
+unlock_time = 600
+
+silent
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo sed -i \
+
+  -e '/^auth.*pam_unix\.so/i auth required pam_faillock.so preauth' \
+
+  -e '/^auth.*pam_unix\.so/s/success=1 default=ignore/success=2 default=bad/' \
+
+  -e '/^auth.*pam_unix\.so/a auth [default=die] pam_faillock.so authfail' \
+
+  -e '/^auth.*pam_permit\.so/i auth required pam_faillock.so authsucc' \
+
+  /etc/pam.d/common-auth
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo sed -i \
+
+  -e '/^auth.*pam_unix\.so/i auth required pam_faillock.so preauth' \
+
+  -e '/^auth.*pam_unix\.so/s/success=1 default=ignore/success=2 default=bad/' \
+
+  -e '/^auth.*pam_unix\.so/a auth [default=die] pam_faillock.so authfail' \
+
+  -e '/^auth.*pam_permit\.so/i auth required pam_faillock.so authsucc' \
+
+  /etc/pam.d/common-auth
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo grep -vE '^[[:space:]]*(#|$)' /etc/pam.d/common-auth /etc/security/faillock.conf
+
+
+sudo -k
+
+sudo -v
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo grep -vE '^[[:space:]]*(#|$)' /etc/pam.d/common-auth /etc/security/faillock.conf
+
+
+sudo -k
+
+sudo -v
+
+/etc/pam.d/common-auth:auth required pam_faillock.so preauth
+/etc/pam.d/common-auth:auth	[success=2 default=bad]	pam_unix.so nullok
+/etc/pam.d/common-auth:auth [default=die] pam_faillock.so authfail
+/etc/pam.d/common-auth:auth	requisite			pam_deny.so
+/etc/pam.d/common-auth:auth required pam_faillock.so authsucc
+/etc/pam.d/common-auth:auth	required			pam_permit.so
+/etc/pam.d/common-auth:auth	optional			pam_cap.so 
+/etc/security/faillock.conf:deny = 5
+/etc/security/faillock.conf:fail_interval = 900
+/etc/security/faillock.conf:unlock_time = 600
+/etc/security/faillock.conf:silent
+[sudo: authenticate] Password: 
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo passwd ia462student
+
+New password: 
+Retype new password: 
+passwd: password updated successfully
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ su - ia462student -c 'id'
+
+Password: 
+uid=1002(ia462student) gid=1003(ia462lab) groups=1003(ia462lab)
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo faillock --user ia462student --reset
+
+
+for attempt in 1 2 3 4 5
+
+do
+
+    su - ia462student -c 'id'
+
+done
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo faillock --user ia462student --reset
+
+
+for attempt in 1 2 3 4 5
+
+do
+
+    su - ia462student -c 'id'
+
+done
+
+Password: 
+su: Authentication failure
+Password: 
+uid=1002(ia462student) gid=1003(ia462lab) groups=1003(ia462lab)
+Password: 
+uid=1002(ia462student) gid=1003(ia462lab) groups=1003(ia462lab)
+Password: 
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo faillock --user ia462student --reset
+
+
+for attempt in 1 2 3 4 5
+
+do
+
+    su - ia462student -c 'id'
+
+done
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo faillock --user ia462student --reset
+
+
+for attempt in 1 2 3 4 5
+
+do
+
+    su - ia462student -c 'id'
+
+done
+
+Password: 
+[REDACTED_USER]
+su: Authentication failure
+Password: 
+su: Authentication failure
+Password: 
+su: Authentication failure
+Password: 
+su: Authentication failure
+Password: 
+su: Authentication failure
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo faillock --user ia462student | tee faillock-test.txt
+
+
+su - ia462student -c 'id'
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo faillock --user ia462student | tee faillock-test.txt
+
+
+su - ia462student -c 'id'
+
+ia462student:
+When                Type  Source                                           Valid
+2026-11-23 16:18:56 TTY   /dev/pts/2                                           V
+2026-11-23 16:19:01 TTY   /dev/pts/2                                           V
+2026-11-23 16:19:07 TTY   /dev/pts/2                                           V
+2026-11-23 16:19:12 TTY   /dev/pts/2                                           V
+2026-11-23 16:19:18 TTY   /dev/pts/2                                           V
+Password: 
+su: Authentication failure
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ su - ia462student -c 'id'
+
+Password: 
+su: Authentication failure
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ su - ia462student -c 'id'
+
+Password: 
+su: Authentication failure
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo faillock --user ia462student | tee faillock-test.txt
+
+ia462student:
+When                Type  Source                                           Valid
+2026-11-23 16:18:56 TTY   /dev/pts/2                                           V
+2026-11-23 16:19:01 TTY   /dev/pts/2                                           V
+2026-11-23 16:19:07 TTY   /dev/pts/2                                           V
+2026-11-23 16:19:12 TTY   /dev/pts/2                                           V
+2026-11-23 16:19:18 TTY   /dev/pts/2                                           V
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo faillock --user ia462student | tee faillock-test.txt
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ 
+
+sudo faillock --user ia462student --reset
+
+
+su - ia462student -c 'id'
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo faillock --user ia462student --reset
+
+
+s
+sudo faillock --user ia462student --reset
+
+
+su - ia462student -c 'id'
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo faillock --user ia462student --reset
+
+
+su - ia462student -c 'id'
+
+Password: 
+uid=1002(ia462student) gid=1003(ia462lab) groups=1003(ia462lab)
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo faillock --user ia462student | tee faillock-test.txt
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$  - ia462student -c 'id'
+
+do faillock --user ia462student | tee faillock-test.txt
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ for attempt in 1 2 3 4 5; do     su - ia462student -c 'id'; done
+
+Password: 
+su: Authentication failure
+Password: 
+su: Authentication failure
+Password: 
+su: Authentication failure
+Password: 
+su: Authentication failure
+Password: 
+su: Authentication failure
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo faillock --user ia462student | tee faillock-test.txt
+
+
+su - ia462student -c 'id'
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo faillock --user ia462student | tee faillock-test.txt
+
+
+su - ia462student -c 'id'
+
+ia462student:
+When                Type  Source                                           Valid
+2026-11-23 16:21:32 TTY   /dev/pts/2                                           V
+2026-11-23 16:21:36 TTY   /dev/pts/2                                           V
+2026-11-23 16:21:40 TTY   /dev/pts/2                                           V
+2026-11-23 16:21:45 TTY   /dev/pts/2                                           V
+2026-11-23 16:21:50 TTY   /dev/pts/2                                           V
+Password: 
+su: Authentication failure
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo faillock --user ia462student | tee faillock-test.txt
+
+
+su - ia462student -c 'id'
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo faillock --user ia462student | tee faillock-test.txt
+
+
+su - ia462student -c 'id'
+
+ia462student:
+When                Type  Source                                           Valid
+2026-11-23 16:21:32 TTY   /dev/pts/2                                           V
+2026-11-23 16:21:36 TTY   /dev/pts/2                                           V
+2026-11-23 16:21:40 TTY   /dev/pts/2                                           V
+2026-11-23 16:21:45 TTY   /dev/pts/2                                           V
+2026-11-23 16:21:50 TTY   /dev/pts/2                                           V
+Password: 
+su: Authentication failure
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo faillock --user ia462student --reset
+
+
+su - ia462student -c 'id'
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo faillock --user ia462student --reset
+
+
+su - ia462student -c 'id'
+
+Password: 
+uid=1002(ia462student) gid=1003(ia462lab) groups=1003(ia462lab)
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo cat /etc/pam.d/common-auth > pam-common-auth.hardened
+
+sudo cat /etc/security/faillock.conf > faillock.conf.hardesudo cat /etc/pam.d/common-auth > pam-common-auth.hardened
+
+sudo cat /etc/security/faillock.conf > faillock.conf.hardened
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo apt install -y lynis
+
+
+Reading package lists... 0%
+
+Reading package lists... 100%
+                              
+
+Building dependency tree... 0%
+
+Building dependency tree... 0%
+
+Building dependency tree... 50%
+
+Building dependency tree... 50%
+                                
+
+Reading state information... 0%
+
+Reading state information... 0%
+                                
+lynis is already the newest version (3.1.6-1).
+
+Solving dependencies... 0%
+
+Solving dependencies... 10%
+                            
+Summary:
+  Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 52
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo lynis audit system --quick --nocolors 2>&1 | tee lynis-report.txt
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo lynis audit system --quick --nocolors 2>&1 | tee lynis-report.txt
+
+
+[ Lynis 3.1.6 ]
+
+################################################################################
+  Lynis comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+  welcome to redistribute it under the terms of the GNU General Public License.
+  See the LICENSE file for details about using this software.
+
+  2007-2025, CISOfy - https://cisofy.com/lynis/
+  Enterprise support available (compliance, plugins, interface and tools)
+################################################################################
+
+
+[+] Initializing program
+------------------------------------
+- Detecting OS...  [ DONE ]
+- Checking profiles... [ DONE ]
+
+  ---------------------------------------------------
+  Program version:           3.1.6
+  Operating system:          Linux
+  Operating system name:     Ubuntu
+  Operating system version:  26.04
+  End-of-life:               UNKNOWN
+  Kernel version:            6.18.33.2
+  Hardware platform:         x86_64
+  Hostname:                  [REDACTED_HOST]
+  ---------------------------------------------------
+  Profiles:                  /etc/lynis/default.prf
+  Log file:                  /var/log/lynis.log
+  Report file:               /var/log/lynis-report.dat
+  Report version:            1.0
+  Plugin directory:          /etc/lynis/plugins
+  ---------------------------------------------------
+  Auditor:                   [Not Specified]
+  Language:                  en
+  Test category:             all
+  Test group:                all
+  ---------------------------------------------------
+- Program update status...  [ NO UPDATE ]
+
+      ===============================================================================
+        Lynis might be outdated
+      ===============================================================================
+
+        Current version is more than 6 months old
+        This version might be Please check if there is a more recent version available.
+
+        Please check if there is a more recent version available.
+
+        Download locations:
+
+        Packages (DEB/RPM) -  https://packages.cisofy.com/
+        Website (TAR)      -  https://cisofy.com/downloads/
+        GitHub             -  https://github.com/CISOfy/lynis
+
+      ===============================================================================
+
+
+[+] System tools
+------------------------------------
+- Scanning available tools...
+- Checking system binaries...
+
+[+] Plugins (phase 1)
+------------------------------------
+Note: plugins have more extensive tests and may take several minutes to complete
+ 
+- Plugin: debian
+    [
+[+] Debian Tests
+------------------------------------
+- Checking for system binaries that are required by Debian Tests...
+- Checking /bin...  [ FOUND ]
+- Checking /sbin...  [ FOUND ]
+- Checking /usr/bin...  [ FOUND ]
+- Checking /usr/sbin...  [ FOUND ]
+- Checking /usr/local/bin...  [ FOUND ]
+- Checking /usr/local/sbin...  [ FOUND ]
+- Authentication:
+- PAM (Pluggable Authentication Modules):
+
+  [WARNING]: Test DEB-0001 had a long execution: 15.773065 seconds
+
+- libpam-tmpdir [ Not Installed ]
+- File System Checks:
+- DM-Crypt, Cryptsetup & Cryptmount:
+- Software:
+- apt-listbugs [ Not Installed ]
+- apt-listchanges [ Not Installed ]
+- needrestart [ Not Installed ]
+- fail2ban [ Not Installed ]
+]
+
+[+] Boot and services
+------------------------------------
+- Service Manager [ systemd ]
+- Checking UEFI boot [ DISABLED ]
+- Boot loader [ NONE FOUND ]
+- Check running services (systemctl) [ DONE ]
+Result: found 16 running services
+- Check enabled services at boot (systemctl) [ DONE ]
+Result: found 32 enabled services
+- Check startup files (permissions) [ OK ]
+- Running 'systemd-analyze security'
+Unit name (exposure value) and predicate
+--------------------------------
+- chrony.service (value=3.7) [ PROTECTED ]
+- containerd.service (value=9.6) [ UNSAFE ]
+- cron.service (value=9.6) [ UNSAFE ]
+- dbus.service (value=9.2) [ UNSAFE ]
+- dmesg.service (value=9.6) [ UNSAFE ]
+- docker.service (value=9.6) [ UNSAFE ]
+- emergency.service (value=9.5) [ UNSAFE ]
+- [REDACTED_EMAIL] (value=9.6) [ UNSAFE ]
+- lynis.service (value=9.6) [ UNSAFE ]
+- networkd-dispatcher.service (value=9.6) [ UNSAFE ]
+- polkit.service (value=1.2) [ PROTECTED ]
+- rc-local.service (value=9.6) [ UNSAFE ]
+- rescue.service (value=9.5) [ UNSAFE ]
+- rsyslog.service (value=6.3) [ MEDIUM ]
+- snapd.service (value=9.9) [ UNSAFE ]
+- ssh.service (value=9.6) [ UNSAFE ]
+- [REDACTED_EMAIL] (value=9.6) [ UNSAFE ]
+- systemd-ask-password-console.service (value=9.4) [ UNSAFE ]
+- systemd-ask-password-wall.service (value=9.4) [ UNSAFE ]
+- systemd-bsod.service (value=9.5) [ UNSAFE ]
+- systemd-hostnamed.service (value=1.7) [ PROTECTED ]
+- systemd-journald.service (value=4.9) [ PROTECTED ]
+- systemd-logind.service (value=2.8) [ PROTECTED ]
+- systemd-networkd.service (value=2.9) [ PROTECTED ]
+- systemd-resolved.service (value=2.2) [ PROTECTED ]
+- systemd-udevd.service (value=7.1) [ MEDIUM ]
+- ubuntu-advantage.service (value=9.6) [ UNSAFE ]
+- unattended-upgrades.service (value=9.6) [ UNSAFE ]
+- [REDACTED_EMAIL] (value=9.4) [ UNSAFE ]
+
+[+] Kernel
+------------------------------------
+- Checking default runlevel [ runlevel 5 ]
+- Checking CPU support (NX/PAE)
+CPU support: PAE and/or NoeXecute supported [ FOUND ]
+- Checking kernel version and release [ DONE ]
+- Checking kernel type [ DONE ]
+- Checking loaded kernel modules [ DONE ]
+Found 20 active modules
+- Checking Linux kernel configuration file [ FOUND ]
+- Checking default I/O kernel scheduler [ NOT FOUND ]
+/usr/bin/grep: /etc/kernel-img.conf: No such file or directory
+- Checking core dumps configuration
+- configuration in systemd conf files [ DEFAULT ]
+- configuration in /etc/profile [ DEFAULT ]
+- 'hard' configuration in /etc/security/limits.conf [ ENABLED ]
+- 'soft' configuration in /etc/security/limits.conf [ DISABLED ]
+- Checking setuid core dumps configuration [ DISABLED ]
+- Check if reboot is needed [ UNKNOWN ]
+
+[+] Memory and Processes
+------------------------------------
+- Checking /proc/meminfo [ FOUND ]
+- Searching for dead/zombie processes [ NOT FOUND ]
+- Searching for IO waiting processes [ NOT FOUND ]
+- Search prelink tooling [ NOT FOUND ]
+
+[+] Users, Groups and Authentication
+------------------------------------
+- Administrator accounts [ OK ]
+- Unique UIDs [ OK ]
+- Consistency of group files (grpck) [ OK ]
+- Unique group IDs [ OK ]
+- Unique group names [ OK ]
+- Password file consistency [ OK ]
+- Password hashing methods [ OK ]
+- Checking password hashing rounds [ DISABLED ]
+- Query system users (non daemons) [ DONE ]
+- NIS+ authentication support [ NOT ENABLED ]
+- NIS authentication support [ NOT ENABLED ]
+- Sudoers file(s) [ FOUND ]
+- Permissions for directory: /etc/sudoers.d [ WARNING ]
+- Permissions for: /etc/sudoers [ OK ]
+- Permissions for: /etc/sudoers.d/README [ OK ]
+- PAM password strength tools [ SUGGESTION ]
+- PAM configuration files (pam.conf) [ FOUND ]
+- PAM configuration files (pam.d) [ FOUND ]
+- PAM modules [ FOUND ]
+- LDAP module in PAM [ NOT FOUND ]
+- Accounts without expire date [ SUGGESTION ]
+- Accounts without password [ OK ]
+- Locked accounts [ OK ]
+- Checking user password aging (minimum) [ DISABLED ]
+- User password aging (maximum) [ DISABLED ]
+- Checking expired passwords [ OK ]
+- Checking Linux single user mode authentication [ OK ]
+- Determining default umask
+- umask (/etc/profile and /etc/profile.d) [ OK ]
+- umask (/etc/login.defs) [ SUGGESTION ]
+- LDAP authentication support [ NOT ENABLED ]
+- Logging failed login attempts [ DISABLED ]
+
+[+] Kerberos
+------------------------------------
+- Check for Kerberos KDC and principals [ NOT FOUND ]
+
+[+] Shells
+------------------------------------
+- Checking shells from /etc/shells
+Result: found 9 shells (valid shells: 9).
+- Session timeout settings/tools [ NONE ]
+- Checking default umask values
+- Checking default umask in /etc/bash.bashrc [ NONE ]
+- Checking default umask in /etc/profile [ OK ]
+
+[+] File systems
+------------------------------------
+- Checking mount points
+- Checking /home mount point [ SUGGESTION ]
+- Checking /tmp mount point [ OK ]
+- Checking /var mount point [ SUGGESTION ]
+- Query swap partitions (fstab) [ NONE ]
+- Testing swap partitions [ OK ]
+- Testing /proc mount (hidepid) [ SUGGESTION ]
+- Checking for old files in /tmp [ OK ]
+- Checking /tmp sticky bit [ OK ]
+- Checking /var/tmp sticky bit [ OK ]
+- ACL support root file system [ ENABLED ]
+- Mount options of /dev [ PARTIALLY HARDENED ]
+- Mount options of /dev/shm [ PARTIALLY HARDENED ]
+- Mount options of /run [ HARDENED ]
+- Mount options of /tmp [ PARTIALLY HARDENED ]
+- Total without nodev:15 noexec:24 nosuid:13 ro or noexec (W^X): 19 of total 39
+- Disable kernel support of some filesystems
+
+[+] USB Devices
+------------------------------------
+- Checking usb-storage driver (modprobe config) [ NOT DISABLED ]
+- Checking USBGuard [ NOT FOUND ]
+
+[+] Storage
+------------------------------------
+- Checking firewire ohci driver (modprobe config) [ DISABLED ]
+
+[+] NFS
+------------------------------------
+- Check running NFS daemon [ NOT FOUND ]
+
+[+] Name services
+------------------------------------
+- Checking search domains [ FOUND ]
+- Searching DNS domain name [ FOUND ]
+Domain name: localdomain
+- Checking /etc/hosts
+- Duplicate entries in hosts file [ NONE ]
+- Presence of configured hostname in /etc/hosts [ FOUND ]
+- Hostname mapped to localhost [ NOT FOUND ]
+- Localhost mapping to IP address [ OK ]
+
+[+] Ports and packages
+------------------------------------
+- Searching package managers
+- Searching dpkg package manager [ FOUND ]
+- Querying package manager
+- Query unpurged packages [ NONE ]
+- Checking security repository in sources.list.d directory [ OK ]
+- Checking APT package database [ OK ]
+- Checking vulnerable packages [ WARNING ]
+- Checking upgradeable packages [ SKIPPED ]
+- Checking package audit tool [ INSTALLED ]
+Found: apt-get
+
+=================================================================
+
+  Exception found!
+
+  Function/test:  [PKGS-7410]
+  Message:        Could not find any kernel packages via package manager
+
+  Help improving the Lynis community with your feedback!
+
+  Steps:
+  - Ensure you are running the latest version (/usr/sbin/lynis update check)
+  - If so, create a GitHub issue at https://github.com/CISOfy/lynis
+  - Include relevant parts of the log file or configuration file
+
+  Thanks!
+
+=================================================================
+
+- Toolkit for automatic upgrades (unattended-upgrade) [ FOUND ]
+
+[+] Networking
+------------------------------------
+- Checking IPv6 configuration [ ENABLED ]
+Configuration method [ AUTO ]
+IPv6 only [ NO ]
+- Checking configured nameservers
+- Testing nameservers
+Nameserver: [REDACTED_PRIVATE_IP] [ SKIPPED ]
+- Minimal of 2 responsive nameservers [ SKIPPED ]
+- DNSSEC supported (systemd-resolved) [ UNKNOWN ]
+- Getting listening ports (TCP/UDP) [ DONE ]
+- Checking promiscuous interfaces [ OK ]
+- Checking status DHCP client [ NOT ACTIVE ]
+- Checking for ARP monitoring software [ NOT FOUND ]
+- Uncommon network protocols [ 0 ]
+
+[+] Printers and Spools
+------------------------------------
+- Checking cups daemon [ NOT FOUND ]
+- Checking lp daemon [ NOT RUNNING ]
+
+[+] Software: e-mail and messaging
+------------------------------------
+
+[+] Software: firewalls
+------------------------------------
+- Checking iptables kernel module [ FOUND ]
+- Checking iptables policies of chains [ FOUND ]
+- Chain INPUT (table: filter, target: ACCEPT) [ ACCEPT ]
+- Chain INPUT (table: security, target: ACCEPT) [ ACCEPT ]
+- Checking for empty ruleset [ OK ]
+- Checking for unused rules [ FOUND ]
+- Checking host based firewall [ ACTIVE ]
+
+[+] Software: webserver
+------------------------------------
+- Checking Apache [ NOT FOUND ]
+- Checking nginx [ NOT FOUND ]
+
+[+] SSH Support
+------------------------------------
+- Checking running SSH daemon [ FOUND ]
+- Searching SSH configuration [ FOUND ]
+- OpenSSH option: AllowTcpForwarding [ SUGGESTION ]
+- OpenSSH option: ClientAliveCountMax [ SUGGESTION ]
+- OpenSSH option: ClientAliveInterval [ OK ]
+- OpenSSH option: FingerprintHash [ OK ]
+- OpenSSH option: GatewayPorts [ OK ]
+- OpenSSH option: IgnoreRhosts [ OK ]
+- OpenSSH option: LoginGraceTime [ OK ]
+- OpenSSH option: LogLevel [ SUGGESTION ]
+- OpenSSH option: MaxAuthTries [ OK ]
+- OpenSSH option: MaxSessions [ SUGGESTION ]
+- OpenSSH option: PermitRootLogin [ OK ]
+- OpenSSH option: PermitUserEnvironment [ OK ]
+- OpenSSH option: PermitTunnel [ OK ]
+- OpenSSH option: Port [ SUGGESTION ]
+- OpenSSH option: PrintLastLog [ OK ]
+- OpenSSH option: StrictModes [ OK ]
+- OpenSSH option: TCPKeepAlive [ SUGGESTION ]
+- OpenSSH option: UseDNS [ OK ]
+- OpenSSH option: X11Forwarding [ SUGGESTION ]
+- OpenSSH option: AllowAgentForwarding [ SUGGESTION ]
+- OpenSSH option: AllowUsers [ NOT FOUND ]
+- OpenSSH option: AllowGroups [ NOT FOUND ]
+
+[+] SNMP Support
+------------------------------------
+- Checking running SNMP daemon [ NOT FOUND ]
+
+[+] Databases
+------------------------------------
+No database engines found
+
+[+] LDAP Services
+------------------------------------
+- Checking OpenLDAP instance [ NOT FOUND ]
+
+[+] PHP
+------------------------------------
+- Checking PHP [ NOT FOUND ]
+
+[+] Squid Support
+------------------------------------
+- Checking running Squid daemon [ NOT FOUND ]
+
+[+] Logging and files
+------------------------------------
+- Checking for a running log daemon [ OK ]
+- Checking Syslog-NG status [ NOT FOUND ]
+- Checking systemd journal status [ FOUND ]
+- Checking Metalog status [ NOT FOUND ]
+- Checking RSyslog status [ FOUND ]
+- Checking RFC 3195 daemon status [ NOT FOUND ]
+- Checking minilogd instances [ NOT FOUND ]
+- Checking wazuh-agent daemon status [ NOT FOUND ]
+- Checking logrotate presence [ OK ]
+- Checking remote logging [ NOT ENABLED ]
+- Checking log directories (static list) [ DONE ]
+- Checking open log files [ DONE ]
+- Checking deleted files in use [ FILES FOUND ]
+
+[+] Insecure services
+------------------------------------
+- Installed inetd package [ NOT FOUND ]
+- Installed xinetd package [ OK ]
+- xinetd status [ NOT ACTIVE ]
+- Installed rsh client package [ OK ]
+- Installed rsh server package [ OK ]
+- Installed telnet client package [ OK ]
+- Installed telnet server package [ NOT FOUND ]
+- Checking NIS client installation [ OK ]
+- Checking NIS server installation [ OK ]
+- Checking TFTP client installation [ OK ]
+- Checking TFTP server installation [ OK ]
+
+[+] Banners and identification
+------------------------------------
+- /etc/issue [ FOUND ]
+- /etc/issue contents [ WEAK ]
+- /etc/issue.net [ FOUND ]
+- /etc/issue.net contents [ WEAK ]
+
+[+] Scheduled tasks
+------------------------------------
+- Checking crontab and cronjob files [ DONE ]
+
+[+] Accounting
+------------------------------------
+- Checking accounting information [ NOT FOUND ]
+- Checking sysstat accounting data [ NOT FOUND ]
+- Checking auditd [ NOT FOUND ]
+
+[+] Time and Synchronization
+------------------------------------
+- NTP daemon found: chronyd [ FOUND ]
+- Checking for a running NTP daemon or client [ OK ]
+
+[+] Cryptography
+------------------------------------
+- Checking for expired SSL certificates [0/121] [ NONE ]
+- Kernel entropy is sufficient [ YES ]
+- HW RNG & rngd [ NO ]
+- SW prng [ NO ]
+- MOR variable not found [ WEAK ]
+
+[+] Virtualization
+------------------------------------
+
+[+] Containers
+------------------------------------
+- Docker
+- Docker daemon [ RUNNING ]
+- Docker info output (warnings) [ NONE ]
+- Containers
+- Total containers [ 0 ]
+- File permissions [ OK ]
+
+[+] Security frameworks
+------------------------------------
+- Checking presence AppArmor [ FOUND ]
+- Checking AppArmor status [ UNKNOWN ]
+- Checking presence SELinux [ NOT FOUND ]
+- Checking presence TOMOYO Linux [ NOT FOUND ]
+- Checking presence grsecurity [ NOT FOUND ]
+- Checking for implemented MAC framework [ NONE ]
+
+[+] Software: file integrity
+------------------------------------
+- Checking file integrity tools
+- Checking presence integrity tool [ NOT FOUND ]
+
+[+] Software: System tooling
+------------------------------------
+- Checking automation tooling
+- Automation tooling [ NOT FOUND ]
+- Checking for IDS/IPS tooling [ NONE ]
+
+[+] Software: Malware
+------------------------------------
+- Malware software components [ NOT FOUND ]
+
+[+] File Permissions
+------------------------------------
+- Starting file permissions check
+File: /etc/crontab [ SUGGESTION ]
+File: /etc/group [ OK ]
+File: /etc/group- [ OK ]
+File: /etc/hosts.allow [ OK ]
+File: /etc/hosts.deny [ OK ]
+File: /etc/issue [ OK ]
+File: /etc/issue.net [ OK ]
+File: /etc/passwd [ OK ]
+File: /etc/passwd- [ OK ]
+File: /etc/ssh/sshd_config [ SUGGESTION ]
+Directory: /root/.ssh [ OK ]
+Directory: /etc/cron.d [ SUGGESTION ]
+Directory: /etc/cron.daily [ SUGGESTION ]
+Directory: /etc/cron.hourly [ SUGGESTION ]
+Directory: /etc/cron.weekly [ SUGGESTION ]
+Directory: /etc/cron.monthly [ SUGGESTION ]
+
+[+] Home directories
+------------------------------------
+- Permissions of home directories [ OK ]
+- Ownership of home directories [ OK ]
+- Checking shell history files [ OK ]
+
+[+] Kernel Hardening
+------------------------------------
+- Comparing sysctl key pairs with scan profile
+- dev.tty.ldisc_autoload (exp: 0) [ OK ]
+- fs.protected_fifos (exp: 2) [ DIFFERENT ]
+- fs.protected_hardlinks (exp: 1) [ OK ]
+- fs.protected_regular (exp: 2) [ OK ]
+- fs.protected_symlinks (exp: 1) [ OK ]
+- fs.suid_dumpable (exp: 0) [ OK ]
+- kernel.core_uses_pid (exp: 1) [ OK ]
+- kernel.ctrl-alt-del (exp: 0) [ DIFFERENT ]
+- kernel.dmesg_restrict (exp: 1) [ DIFFERENT ]
+- kernel.kptr_restrict (exp: 2) [ DIFFERENT ]
+- kernel.modules_disabled (exp: 1) [ DIFFERENT ]
+- kernel.perf_event_paranoid (exp: 2 3 4) [ OK ]
+- kernel.randomize_va_space (exp: 2) [ OK ]
+- kernel.sysrq (exp: 0) [ DIFFERENT ]
+- kernel.unprivileged_bpf_disabled (exp: 1) [ DIFFERENT ]
+- kernel.yama.ptrace_scope (exp: 1 2 3) [ OK ]
+- net.core.bpf_jit_harden (exp: 2) [ DIFFERENT ]
+- net.ipv4.conf.all.accept_redirects (exp: 0) [ OK ]
+- net.ipv4.conf.all.accept_source_route (exp: 0) [ OK ]
+- net.ipv4.conf.all.bootp_relay (exp: 0) [ OK ]
+- net.ipv4.conf.all.forwarding (exp: 0) [ DIFFERENT ]
+- net.ipv4.conf.all.log_martians (exp: 1) [ DIFFERENT ]
+- net.ipv4.conf.all.mc_forwarding (exp: 0) [ OK ]
+- net.ipv4.conf.all.proxy_arp (exp: 0) [ OK ]
+- net.ipv4.conf.all.rp_filter (exp: 1) [ DIFFERENT ]
+- net.ipv4.conf.all.send_redirects (exp: 0) [ DIFFERENT ]
+- net.ipv4.conf.default.accept_redirects (exp: 0) [ DIFFERENT ]
+- net.ipv4.conf.default.accept_source_route (exp: 0) [ OK ]
+- net.ipv4.conf.default.log_martians (exp: 1) [ DIFFERENT ]
+- net.ipv4.icmp_echo_ignore_broadcasts (exp: 1) [ OK ]
+- net.ipv4.icmp_ignore_bogus_error_responses (exp: 1) [ OK ]
+- net.ipv4.tcp_syncookies (exp: 1) [ OK ]
+- net.ipv4.tcp_timestamps (exp: 0 1) [ OK ]
+- net.ipv6.conf.all.accept_redirects (exp: 0) [ DIFFERENT ]
+- net.ipv6.conf.all.accept_source_route (exp: 0) [ OK ]
+- net.ipv6.conf.default.accept_redirects (exp: 0) [ DIFFERENT ]
+- net.ipv6.conf.default.accept_source_route (exp: 0) [ OK ]
+
+[+] Hardening
+------------------------------------
+- Installed compiler(s) [ FOUND ]
+- Installed malware scanner [ NOT FOUND ]
+- Non-native binary formats [ FOUND ]
+
+[+] Custom tests
+------------------------------------
+- Running custom tests...  [ NONE ]
+
+[+] Plugins (phase 2)
+------------------------------------
+
+================================================================================
+
+  -[ Lynis 3.1.6 Results ]-
+
+  Warnings (1):
+  ----------------------------
+  ! Found one or more vulnerable packages. [PKGS-7392] 
+      https://cisofy.com/lynis/controls/PKGS-7392/
+
+  Suggestions (47):
+  ----------------------------
+  * Install libpam-tmpdir to set $TMP and $TMPDIR for PAM sessions [DEB-0280] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/DEB-0280/
+
+  * Install apt-listbugs to display a list of critical bugs prior to each APT installation. [DEB-0810] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/DEB-0810/
+
+  * Install apt-listchanges to display any significant changes prior to any upgrade via APT. [DEB-0811] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/DEB-0811/
+
+  * Install needrestart, alternatively to debian-goodies, so that you can run needrestart after upgrades to determine which daemons are using old versions of libraries and need restarting. [DEB-0831] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/DEB-0831/
+
+  * Install fail2ban to automatically ban hosts that commit multiple authentication errors. [DEB-0880] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/DEB-0880/
+
+  * Determine runlevel and services at startup [BOOT-5180] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/BOOT-5180/
+
+  * Consider hardening system services [BOOT-5264] 
+    - Details  : Run '/usr/bin/systemd-analyze security SERVICE' for each service
+    - Related resources
+      * Article: Systemd features to secure service files: https://linux-audit.com/systemd/systemd-features-to-secure-units-and-services/
+      * Website: https://cisofy.com/lynis/controls/BOOT-5264/
+
+  * Determine why /vmlinuz or /boot/vmlinuz is missing on this Debian/Ubuntu system. [KRNL-5788] 
+    - Details  : /vmlinuz or /boot/vmlinuz
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/KRNL-5788/
+
+  * Configure password hashing rounds in /etc/login.defs [AUTH-9230] 
+    - Related resources
+      * Article: Linux password security: hashing rounds: https://linux-audit.com/authentication/configure-the-minimum-password-length-on-linux-systems/
+      * Website: https://cisofy.com/lynis/controls/AUTH-9230/
+
+  * Install a PAM module for password strength testing like pam_cracklib or pam_passwdqc or libpam-passwdqc [AUTH-9262] 
+    - Related resources
+      * Article: Configure minimum password length for Linux systems: https://linux-audit.com/configure-the-minimum-password-length-on-linux-systems/
+      * Website: https://cisofy.com/lynis/controls/AUTH-9262/
+
+  * When possible set expire dates for all password protected accounts [AUTH-9282] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/AUTH-9282/
+
+  * Configure minimum password age in /etc/login.defs [AUTH-9286] 
+    - Related resources
+      * Article: Configure minimum password length for Linux systems: https://linux-audit.com/configure-the-minimum-password-length-on-linux-systems/
+      * Website: https://cisofy.com/lynis/controls/AUTH-9286/
+
+  * Configure maximum password age in /etc/login.defs [AUTH-9286] 
+    - Related resources
+      * Article: Configure minimum password length for Linux systems: https://linux-audit.com/configure-the-minimum-password-length-on-linux-systems/
+      * Website: https://cisofy.com/lynis/controls/AUTH-9286/
+
+  * Default umask in /etc/login.defs could not be found and defaults usually to 022, which could be more strict like 027 [AUTH-9328] 
+    - Related resources
+      * Article: Set default file permissions on Linux with umask: https://linux-audit.com/filesystems/file-permissions/set-default-file-permissions-with-umask/
+      * Website: https://cisofy.com/lynis/controls/AUTH-9328/
+
+  * To decrease the impact of a full /home file system, place /home on a separate partition [FILE-6310] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/FILE-6310/
+
+  * To decrease the impact of a full /var file system, place /var on a separate partition [FILE-6310] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/FILE-6310/
+
+  * Disable drivers like USB storage when not used, to prevent unauthorized storage or data theft [USB-1000] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/USB-1000/
+
+  * Install debsums utility for the verification of packages with known good database. [PKGS-7370] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/PKGS-7370/
+
+  * Update your system with apt-get update, apt-get upgrade, apt-get dist-upgrade and/or unattended-upgrades [PKGS-7392] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/PKGS-7392/
+
+  * Install package apt-show-versions for patch management purposes [PKGS-7394] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/PKGS-7394/
+
+  * Determine if protocol 'dccp' is really needed on this system [NETW-3200] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/NETW-3200/
+
+  * Determine if protocol 'sctp' is really needed on this system [NETW-3200] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/NETW-3200/
+
+  * Determine if protocol 'rds' is really needed on this system [NETW-3200] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/NETW-3200/
+
+  * Determine if protocol 'tipc' is really needed on this system [NETW-3200] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/NETW-3200/
+
+  * Check iptables rules to see which rules are currently not used [FIRE-4513] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/FIRE-4513/
+
+  * Consider hardening SSH configuration [SSH-7408] 
+    - Details  : AllowTcpForwarding (set YES to NO)
+    - Related resources
+      * Article: OpenSSH security and hardening: https://linux-audit.com/ssh/audit-and-harden-your-ssh-configuration/
+      * Website: https://cisofy.com/lynis/controls/SSH-7408/
+
+  * Consider hardening SSH configuration [SSH-7408] 
+    - Details  : ClientAliveCountMax (set 3 to 2)
+    - Related resources
+      * Article: OpenSSH security and hardening: https://linux-audit.com/ssh/audit-and-harden-your-ssh-configuration/
+      * Website: https://cisofy.com/lynis/controls/SSH-7408/
+
+  * Consider hardening SSH configuration [SSH-7408] 
+    - Details  : LogLevel (set INFO to VERBOSE)
+    - Related resources
+      * Article: OpenSSH security and hardening: https://linux-audit.com/ssh/audit-and-harden-your-ssh-configuration/
+      * Website: https://cisofy.com/lynis/controls/SSH-7408/
+
+  * Consider hardening SSH configuration [SSH-7408] 
+    - Details  : MaxSessions (set 10 to 2)
+    - Related resources
+      * Article: OpenSSH security and hardening: https://linux-audit.com/ssh/audit-and-harden-your-ssh-configuration/
+      * Website: https://cisofy.com/lynis/controls/SSH-7408/
+
+  * Consider hardening SSH configuration [SSH-7408] 
+    - Details  : Port (set 22 to )
+    - Related resources
+      * Article: OpenSSH security and hardening: https://linux-audit.com/ssh/audit-and-harden-your-ssh-configuration/
+      * Website: https://cisofy.com/lynis/controls/SSH-7408/
+
+  * Consider hardening SSH configuration [SSH-7408] 
+    - Details  : TCPKeepAlive (set YES to NO)
+    - Related resources
+      * Article: OpenSSH security and hardening: https://linux-audit.com/ssh/audit-and-harden-your-ssh-configuration/
+      * Website: https://cisofy.com/lynis/controls/SSH-7408/
+
+  * Consider hardening SSH configuration [SSH-7408] 
+    - Details  : X11Forwarding (set YES to NO)
+    - Related resources
+      * Article: OpenSSH security and hardening: https://linux-audit.com/ssh/audit-and-harden-your-ssh-configuration/
+      * Website: https://cisofy.com/lynis/controls/SSH-7408/
+
+  * Consider hardening SSH configuration [SSH-7408] 
+    - Details  : AllowAgentForwarding (set YES to NO)
+    - Related resources
+      * Article: OpenSSH security and hardening: https://linux-audit.com/ssh/audit-and-harden-your-ssh-configuration/
+      * Website: https://cisofy.com/lynis/controls/SSH-7408/
+
+  * Enable logging to an external logging host for archiving purposes and additional protection [LOGG-2154] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/LOGG-2154/
+
+  * Check what deleted files are still in use and why. [LOGG-2190] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/LOGG-2190/
+
+  * Add a legal banner to /etc/issue, to warn unauthorized users [BANN-7126] 
+    - Related resources
+      * Article: The real purpose of login banners: https://linux-audit.com/the-real-purpose-of-login-banners-on-linux/
+      * Website: https://cisofy.com/lynis/controls/BANN-7126/
+
+  * Add legal banner to /etc/issue.net, to warn unauthorized users [BANN-7130] 
+    - Related resources
+      * Article: The real purpose of login banners: https://linux-audit.com/the-real-purpose-of-login-banners-on-linux/
+      * Website: https://cisofy.com/lynis/controls/BANN-7130/
+
+  * Enable process accounting [ACCT-9622] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/ACCT-9622/
+
+  * Enable sysstat to collect accounting (no results) [ACCT-9626] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/ACCT-9626/
+
+  * Enable auditd to collect audit information [ACCT-9628] 
+    - Related resources
+      * Article: Linux audit framework 101: basic rules for configuration: https://linux-audit.com/linux-audit-framework/linux-audit-framework-101-basic-rules-for-configuration/
+      * Article: Monitoring Linux file access, changes and data modifications: https://linux-audit.com/monitoring-linux-file-access-changes-and-modifications/
+      * Website: https://cisofy.com/lynis/controls/ACCT-9628/
+
+  * Check output of aa-status [MACF-6208] 
+    - Details  : /sys/kernel/security/apparmor/profiles
+    - Solution : Run aa-status
+    - Related resources
+      * Article: AppArmor: https://linux-audit.com/security-frameworks/apparmor/
+      * Website: https://cisofy.com/lynis/controls/MACF-6208/
+
+  * Install a file integrity tool to monitor changes to critical and sensitive files [FINT-4350] 
+    - Related resources
+      * Article: Monitoring Linux file access, changes and data modifications: https://linux-audit.com/monitoring-linux-file-access-changes-and-modifications/
+      * Article: Monitor for file changes on Linux: https://linux-audit.com/monitor-for-file-system-changes-on-linux/
+      * Website: https://cisofy.com/lynis/controls/FINT-4350/
+
+  * Determine if automation tools are present for system management [TOOL-5002] 
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/TOOL-5002/
+
+  * Consider restricting file permissions [FILE-7524] 
+    - Details  : See screen output or log file
+    - Solution : Use chmod to change file permissions
+    - Related resources
+      * Website: https://cisofy.com/lynis/controls/FILE-7524/
+
+  * One or more sysctl values differ from the scan profile and could be tweaked [KRNL-6000] 
+    - Solution : Change sysctl value or disable test (skip-test=KRNL-6000:<sysctl-key>)
+    - Related resources
+      * Article: Linux hardening with sysctl settings: https://linux-audit.com/linux-hardening-with-sysctl/
+      * Article: Overview of sysctl options and values: https://linux-audit.com/kernel/sysctl/
+      * Website: https://cisofy.com/lynis/controls/KRNL-6000/
+
+  * Harden compilers like restricting access to root user only [HRDN-7222] 
+    - Related resources
+      * Article: Why remove compilers from your system?: https://linux-audit.com/software/why-remove-compilers-from-your-system/
+      * Website: https://cisofy.com/lynis/controls/HRDN-7222/
+
+  * Harden the system by installing at least one malware scanner, to perform periodic file system scans [HRDN-7230] 
+    - Solution : Install a tool like rkhunter, chkrootkit, OSSEC, Wazuh
+    - Related resources
+      * Article: Antivirus for Linux: is it really needed?: https://linux-audit.com/malware/antivirus-for-linux-really-needed/
+      * Article: Monitoring Linux Systems for Rootkits: https://linux-audit.com/monitoring-linux-systems-for-rootkits/
+      * Website: https://cisofy.com/lynis/controls/HRDN-7230/
+
+  Follow-up:
+  ----------------------------
+  - Show details of a test (lynis show details TEST-ID)
+  - Check the logfile for all details (less /var/log/lynis.log)
+  - Read security controls texts (https://cisofy.com)
+  - Use --upload to upload data to central system (Lynis Enterprise users)
+
+================================================================================
+
+  Lynis security scan details:
+
+  Scan mode:
+  Normal [▆]  Forensics [ ]  Integration [ ]  Pentest [ ]
+
+  Lynis modules:
+  - Compliance status      [?]
+  - Security audit         [V]
+  - Vulnerability scan     [V]
+
+  Details:
+  Hardening index : 67 [#############       ]
+  Tests performed : 258
+  Plugins enabled : 1
+
+  Software components:
+  - Firewall               [V]
+  - Intrusion software     [X]
+  - Malware scanner        [X]
+
+  Files:
+  - Test and debug information      : /var/log/lynis.log
+  - Report data                     : /var/log/lynis-report.dat
+
+================================================================================
+
+  Notice: This version of Lynis is older than 6 months and might be outdated. Check the project page if a newer version is available.
+
+================================================================================
+
+  Exceptions found
+  Some exceptional events or information was found!
+
+  What to do:
+  You can help by providing your log file (/var/log/lynis.log).
+  Go to https://cisofy.com/contact/ and send your file to the e-mail address listed
+
+================================================================================
+
+  Notice: No OS entry was found in the end-of-life database
+
+  What to do:
+  Please submit a pull request on GitHub to include your OS version and the end date of this OS version is being supported
+  URL: https://github.com/CISOfy/lynis
+
+================================================================================
+
+  Lynis 3.1.6
+
+  Auditing, system hardening, and compliance for UNIX-based systems
+  (Linux, macOS, BSD, and others)
+
+  2007-2025, CISOfy - https://cisofy.com/lynis/
+  Enterprise support available (compliance, plugins, interface and tools)
+
+================================================================================
+
+  [TIP]: Enhance Lynis audits by adding your settings to custom.prf (see /etc/lynis/default.prf for all settings)
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo cat /var/log/lynis-report.dat > lynis-report.dat
+
+sudo cat /var/log/lynis.log > lynis-debug.log
+
+
+ls -lh lynis-report.txt pam-common-auth.hardened faillock.sudo cat /var/log/lynis-report.dat > lynis-report.dat
+
+sudo cat /var/log/lynis.log > lynis-debug.log
+
+
+ls -lh lynis-report.txt pam-common-auth.hardened faillock.conf.hardened
+
+-rw-r--r-- 1 [REDACTED_USER] [REDACTED_USER] 2.3K Nov 23 16:24 faillock.conf.hardened
+-rw-r--r-- 1 [REDACTED_USER] [REDACTED_USER]  37K Nov 23 16:26 lynis-report.txt
+-rw-r--r-- 1 [REDACTED_USER] [REDACTED_USER] 1.4K Nov 23 16:24 pam-common-auth.hardened
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo -v
+
+touch suid-binaries.txt world-writable.txt
+
+echo "Running" > permission-scan-status.txt
+
+
+(
+
+    sudo -n find / -type f \( \
+
+        \( -perm -4000 -fprint suid-binaries.txt \) , \
+
+        \( -perm -0002 -fprint world-writable.txt \) \
+
+    \) 2> permission-scan-errors.txt
+
+
+    echo "Exit status: $?" > permission-scan-status.txt
+
+) &
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ sudo -v
+
+touch suid-binaries.txt world-writable.txt
+
+echo "Running" > permission-scan-status.txt
+
+
+(
+
+    sudo -n find / -type f \( \
+
+        \( -perm -4000 -fprint suid-binaries.txt \) , \
+
+        \( -perm -0002 -fprint world-writable.txt \) \
+
+    \) 2> permission-scan-errors.txt
+
+
+    echo "Exit status: $?" > permission-scan-status.txt
+
+) &
+
+[1] 43697
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ cat permission-scan-status.txt
+
+jobs -l
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ cat permission-scan-status.txt
+
+jobs -l
+
+Exit status: 1
+[1]+  Done                       ( sudo -n find / -type f \( \( -perm -4000 -fprint suid-binaries.txt \) , \( -perm -0002 -fprint world-writable.txt \) \) 2> permission-scan-errors.txt; echo "Exit status: $?" > permission-scan-status.txt )
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ wc -l suid-binaries.txt world-writable.txt permission-scan-errors.txt
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ wc -l suid-binaries.txt world-writable.txt permission-scan-errors.txt
+
+      63 suid-binaries.txt
+  189495 world-writable.txt
+     397 permission-scan-errors.txt
+  189955 total
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ head -n 20 permission-scan-errors.txt
+
+find: ‘/mnt/c/$Recycle.Bin/S-1-5-18’: Permission denied
+find: ‘/mnt/c/$Recycle.Bin/[REDACTED_ACCOUNT_SID_001]’: Permission denied
+find: ‘/mnt/c/$Recycle.Bin/[REDACTED_ACCOUNT_SID_002]’: Permission denied
+find: ‘/mnt/c/$Recycle.Bin/[REDACTED_ACCOUNT_SID_003]’: Permission denied
+find: ‘/mnt/c/DumpStack.log.tmp’: Permission denied
+find: ‘/mnt/c/hiberfil.sys’: Permission denied
+find: ‘/mnt/c/pagefile.sys’: Permission denied
+find: ‘/mnt/c/PerfLogs’: Permission denied
+find: ‘/mnt/c/Program Files/WindowsApps’: Permission denied
+find: ‘/mnt/c/Program Files (x86)/Google/CrashReports’: Permission denied
+find: ‘/mnt/c/ProgramData/HP/HP Touchpoint Analytics Client’: Permission denied
+find: ‘/mnt/c/ProgramData/Microsoft/Crypto/PCPKSP/WindowsAIK’: Permission denied
+find: ‘/mnt/c/ProgramData/Microsoft/Crypto/PCPKSP/WindowsEK’: Permission denied
+find: ‘/mnt/c/ProgramData/Microsoft/Diagnosis’: Permission denied
+find: ‘/mnt/c/ProgramData/Microsoft/Network/Downloader’: Permission denied
+find: ‘/mnt/c/ProgramData/Microsoft/Provisioning/AssetCache’: Permission denied
+find: ‘/mnt/c/ProgramData/Microsoft/Search/Data’: Permission denied
+find: ‘/mnt/c/ProgramData/Microsoft/SmsRouter’: Permission denied
+find: ‘/mnt/c/ProgramData/Microsoft/Windows/AppRepository’: Permission denied
+find: ‘/mnt/c/ProgramData/Microsoft/Windows/CapabilityAccessManager’: Permission denied
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ grep -c '^/mnt/c/' world-writable.txt
+
+
+grep -v '^/mnt/c/' world-writable.txt > world-writable-outside-c.txt
+
+
+wc -l world-writable-outside-c.txt
+
+head -n 20 world-writable-outside-c.txt
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ grep -c '^/mnt/c/' world-writable.txt
+
+
+grep -v '^/mnt/c/' world-writable.txt > world-writable-outside-c.txt
+
+
+wc -l world-writable-outside-c.txt
+
+head -n 20 world-writable-outside-c.txt
+
+188609
+886 world-writable-outside-c.txt
+/mnt/wslg/wlog.log
+/mnt/wslg/weston.log
+/proc/sys/kernel/ns_last_pid
+/proc/pressure/io
+/proc/pressure/cpu
+/proc/pressure/memory
+/proc/1/task/1/attr/current
+/proc/1/task/1/attr/exec
+/proc/1/task/1/attr/fscreate
+/proc/1/task/1/attr/keycreate
+/proc/1/task/1/attr/sockcreate
+/proc/1/task/1/attr/apparmor/current
+/proc/1/task/1/attr/apparmor/exec
+/proc/1/attr/current
+/proc/1/attr/exec
+/proc/1/attr/fscreate
+/proc/1/attr/keycreate
+/proc/1/attr/sockcreate
+/proc/1/attr/apparmor/current
+/proc/1/attr/apparmor/exec
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ grep -v '/mnt/c/' permission-scan-errors.txt > permission-scan-errors-outside-c.txt
+
+
+wc -l permission-scan-errors-outside-c.txt
+
+head -n 20 permission-scan-errors-outside-c.txt
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ grep -v '/mnt/c/' permission-scan-errors.txt > permission-scan-errors-outside-c.txt
+
+
+wc -l permission-scan-errors-outside-c.txt
+
+head -n 20 permission-scan-errors-outside-c.txt
+
+^[[6~3 permission-scan-errors-outside-c.txt
+find: File system loop detected; ‘/mnt/wslg/distro’ is part of the same file system loop as ‘/’.
+find: ‘/proc/43701/task/43701/fdinfo/8’: No such file or directory
+find: ‘/proc/43701/fdinfo/7’: No such file or directory
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ cat > permission-scan-notes.txt <<'EOF'
+
+I scanned / for regular files with SUID or world-writable permission bits.
+
+
+Results:
+
+- 63 SUID paths
+
+- 189,495 world-writable paths
+
+- 188,609 world-writable paths under /mnt/c
+
+- 886 world-writable paths outside /mnt/c
+
+
+The scan returned exit status 1 and recorded 397 error lines.
+
+Of these, 394 referenced /mnt/c. The other three reported a
+
+filesystem loop at /mnt/wslg/distro and two unavailable /proc paths.
+
+
+The outside-C results include virtual /proc files and WSLg logs.
+
+The inventories reflect permission bits reported through WSL.
+
+Inaccessible paths could not be fully enumerated, so these results
+
+do not establish complete coverage of every file under /.
+
+The original results and error log were retained.
+
+EOF
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ cat > permission-scan-notes.txt <<'EOF'
+
+I scanned / for regular files with SUID or world-writable permission bits.
+
+
+Results:
+
+- 63 SUID paths
+
+- 189,495 world-writable paths
+
+- 188,609 world-writable paths under /mnt/c
+
+- 886 world-writable paths outside /mnt/c
+
+
+The scan returned exit status 1 and recorded 397 error lines.
+
+Of these, 394 referenced /mnt/c. The other three reported a
+
+filesystem loop at /mnt/wslg/distro and two unavailable /proc paths.
+
+
+The outside-C results include virtual /proc files and WSLg logs.
+
+The inventories reflect permission bits reported through WSL.
+
+Inaccessible paths could not be fully enumerated, so these results
+
+do not establish complete coverage of every file under /.
+
+The original results and error log were retained.
+
+EOF
+
+[REDACTED_USER]@[REDACTED_HOST]:~/ia462-midterm-evidence/section1$ 

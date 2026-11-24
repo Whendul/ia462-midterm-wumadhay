@@ -1,0 +1,4 @@
+IA 462 Midterm - Supply-Chain-Hardened App
+GET /: 200
+HEAD /: 200
+GET /missing: 404

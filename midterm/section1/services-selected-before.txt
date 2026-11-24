@@ -1,0 +1,7 @@
+Id=apport.service
+ActiveState=inactive
+UnitFileState=enabled
+
+Id=landscape-client.service
+ActiveState=inactive
+UnitFileState=enabled

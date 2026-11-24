@@ -1,0 +1,17 @@
+I scanned / for regular files with SUID or world-writable permission bits.
+
+Results:
+- 63 SUID paths
+- 189,495 world-writable paths
+- 188,609 world-writable paths under /mnt/c
+- 886 world-writable paths outside /mnt/c
+
+The scan returned exit status 1 and recorded 397 error lines.
+Of these, 394 referenced /mnt/c. The other three reported a
+filesystem loop at /mnt/wslg/distro and two unavailable /proc paths.
+
+The outside-C results include virtual /proc files and WSLg logs.
+The inventories reflect permission bits reported through WSL.
+Inaccessible paths could not be fully enumerated, so these results
+do not establish complete coverage of every file under /.
+The original results and error log were retained.

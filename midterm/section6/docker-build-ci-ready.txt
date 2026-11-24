@@ -1,0 +1,336 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 30B 0.0s
+#1 transferring dockerfile: 1.07kB 0.1s done
+#1 DONE 0.2s
+
+#2 [internal] load metadata for docker.io/library/python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535
+#2 DONE 0.9s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 109B 0.1s done
+#3 DONE 0.1s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [base 1/2] FROM docker.io/library/python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535
+#5 resolve docker.io/library/python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535 0.1s done
+#5 CACHED
+
+#4 [internal] load build context
+#4 transferring context: 92B 0.1s done
+#4 DONE 0.1s
+
+#6 [base 2/2] RUN apt-get update     && apt-get upgrade -y     && rm -rf /var/lib/apt/lists/*
+#6 1.012 Get:1 http://deb.debian.org/debian trixie InRelease [140 kB]
+#6 1.147 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+#6 1.203 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+#6 1.260 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9679 kB]
+#6 1.601 Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages [1108 B]
+#6 1.647 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [309 kB]
+#6 2.940 Fetched 10.2 MB in 2s (4738 kB/s)
+#6 2.940 Reading package lists...
+#6 4.109 Reading package lists...
+#6 5.299 Building dependency tree...
+#6 5.576 Reading state information...
+#6 5.694 Calculating upgrade...
+#6 6.207 The following packages will be upgraded:
+#6 6.209   base-files libc-bin libc6 libssl3t64 openssl openssl-provider-legacy zlib1g
+#6 6.387 7 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+#6 6.387 Need to get 7972 kB of archives.
+#6 6.387 After this operation, 26.6 kB of additional disk space will be used.
+#6 6.387 Get:1 http://deb.debian.org/debian trixie/main amd64 libc6 amd64 2.41-12+deb13u5 [2850 kB]
+#6 6.714 Get:2 http://deb.debian.org/debian trixie/main amd64 base-files amd64 13.8+deb13u8 [88.3 kB]
+#6 6.720 Get:3 http://deb.debian.org/debian trixie/main amd64 libc-bin amd64 2.41-12+deb13u5 [639 kB]
+#6 6.737 Get:4 http://deb.debian.org/debian trixie/main amd64 openssl-provider-legacy amd64 3.5.9-1~deb13u1 [322 kB]
+#6 6.744 Get:5 http://deb.debian.org/debian trixie/main amd64 zlib1g amd64 1:1.3.dfsg+really1.3.1-1+deb13u1 [88.7 kB]
+#6 6.748 Get:6 http://deb.debian.org/debian trixie/main amd64 libssl3t64 amd64 3.5.9-1~deb13u1 [2465 kB]
+#6 6.787 Get:7 http://deb.debian.org/debian trixie/main amd64 openssl amd64 3.5.9-1~deb13u1 [1518 kB]
+#6 7.207 debconf: unable to initialize frontend: Dialog
+#6 7.207 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#6 7.207 debconf: falling back to frontend: Readline
+#6 7.208 debconf: unable to initialize frontend: Readline
+#6 7.208 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/x86_64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8, <STDIN> line 7.)
+#6 7.208 debconf: falling back to frontend: Teletype
+#6 7.222 debconf: unable to initialize frontend: Teletype
+#6 7.222 debconf: (This frontend requires a controlling tty.)
+#6 7.222 debconf: falling back to frontend: Noninteractive
+#6 8.336 Preconfiguring packages ...
+#6 8.460 Fetched 7972 kB in 1s (14.3 MB/s)
+#6 8.562 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 5658 files and directories currently installed.)
+#6 8.624 Preparing to unpack .../libc6_2.41-12+deb13u5_amd64.deb ...
+#6 8.787 debconf: unable to initialize frontend: Dialog
+#6 8.787 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#6 8.787 debconf: falling back to frontend: Readline
+#6 8.788 debconf: unable to initialize frontend: Readline
+#6 8.788 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/x86_64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8.)
+#6 8.788 debconf: falling back to frontend: Teletype
+#6 8.801 debconf: unable to initialize frontend: Teletype
+#6 8.801 debconf: (This frontend requires a controlling tty.)
+#6 8.801 debconf: falling back to frontend: Noninteractive
+#6 8.915 Unpacking libc6:amd64 (2.41-12+deb13u5) over (2.41-12+deb13u4) ...
+#6 10.69 Setting up libc6:amd64 (2.41-12+deb13u5) ...
+#6 10.82 debconf: unable to initialize frontend: Dialog
+#6 10.82 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#6 10.82 debconf: falling back to frontend: Readline
+#6 10.82 debconf: unable to initialize frontend: Readline
+#6 10.82 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/x86_64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8.)
+#6 10.82 debconf: falling back to frontend: Teletype
+#6 10.83 debconf: unable to initialize frontend: Teletype
+#6 10.83 debconf: (This frontend requires a controlling tty.)
+#6 10.83 debconf: falling back to frontend: Noninteractive
+#6 10.95 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 5658 files and directories currently installed.)
+#6 10.96 Preparing to unpack .../base-files_13.8+deb13u8_amd64.deb ...
+#6 11.00 Unpacking base-files (13.8+deb13u8) over (13.8+deb13u7) ...
+#6 11.25 Setting up base-files (13.8+deb13u8) ...
+#6 11.25 Installing new version of config file /etc/debian_version ...
+#6 11.40 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 5658 files and directories currently installed.)
+#6 11.41 Preparing to unpack .../libc-bin_2.41-12+deb13u5_amd64.deb ...
+#6 11.42 Unpacking libc-bin (2.41-12+deb13u5) over (2.41-12+deb13u4) ...
+#6 11.64 Setting up libc-bin (2.41-12+deb13u5) ...
+#6 11.80 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 5658 files and directories currently installed.)
+#6 11.81 Preparing to unpack .../openssl-provider-legacy_3.5.9-1~deb13u1_amd64.deb ...
+#6 11.82 Unpacking openssl-provider-legacy (3.5.9-1~deb13u1) over (3.5.7-1~deb13u3) ...
+#6 11.91 Setting up openssl-provider-legacy (3.5.9-1~deb13u1) ...
+#6 11.99 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 5658 files and directories currently installed.)
+#6 12.01 Preparing to unpack .../zlib1g_1%3a1.3.dfsg+really1.3.1-1+deb13u1_amd64.deb ...
+#6 12.04 Unpacking zlib1g:amd64 (1:1.3.dfsg+really1.3.1-1+deb13u1) over (1:1.3.dfsg+really1.3.1-1+b1) ...
+#6 12.13 Setting up zlib1g:amd64 (1:1.3.dfsg+really1.3.1-1+deb13u1) ...
+#6 12.22 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 5657 files and directories currently installed.)
+#6 12.23 Preparing to unpack .../libssl3t64_3.5.9-1~deb13u1_amd64.deb ...
+#6 12.25 Unpacking libssl3t64:amd64 (3.5.9-1~deb13u1) over (3.5.7-1~deb13u3) ...
+#6 12.55 Setting up libssl3t64:amd64 (3.5.9-1~deb13u1) ...
+#6 12.63 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 5657 files and directories currently installed.)
+#6 12.64 Preparing to unpack .../openssl_3.5.9-1~deb13u1_amd64.deb ...
+#6 12.66 Unpacking openssl (3.5.9-1~deb13u1) over (3.5.7-1~deb13u3) ...
+#6 12.83 Setting up openssl (3.5.9-1~deb13u1) ...
+#6 12.86 Processing triggers for libc-bin (2.41-12+deb13u5) ...
+#6 DONE 13.0s
+
+#7 [builder 1/3] WORKDIR /build
+#7 DONE 0.1s
+
+#8 [builder 2/3] COPY requirements.lock .
+#8 DONE 0.1s
+
+#9 [builder 3/3] RUN python -m venv /opt/venv     && /opt/venv/bin/pip install --no-cache-dir --require-hashes        --only-binary=:all: -r requirements.lock     && /opt/venv/bin/pip uninstall --yes pip setuptools
+#9 ...
+
+#10 [runtime 1/5] RUN python -m pip uninstall --yes pip setuptools wheel     && groupadd --system appgroup     && useradd --system --gid appgroup --home-dir /app        --shell /usr/sbin/nologin appuser
+#10 3.429 Found existing installation: pip 24.0
+#10 3.575 Uninstalling pip-24.0:
+#10 4.253   Successfully uninstalled pip-24.0
+#10 4.298 Found existing installation: setuptools 79.0.1
+#10 4.452 Uninstalling setuptools-79.0.1:
+#10 5.121   Successfully uninstalled setuptools-79.0.1
+#10 5.156 Found existing installation: wheel 0.46.3
+#10 5.165 Uninstalling wheel-0.46.3:
+#10 5.209   Successfully uninstalled wheel-0.46.3
+#10 5.212 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#10 DONE 5.5s
+
+#11 [runtime 2/5] WORKDIR /app
+#11 DONE 0.1s
+
+#9 [builder 3/3] RUN python -m venv /opt/venv     && /opt/venv/bin/pip install --no-cache-dir --require-hashes        --only-binary=:all: -r requirements.lock     && /opt/venv/bin/pip uninstall --yes pip setuptools
+#9 9.196 Collecting blinker==1.9.0 (from -r requirements.lock (line 7))
+#9 9.355   Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+#9 9.436 Collecting click==8.5.1 (from -r requirements.lock (line 11))
+#9 9.473   Downloading click-8.5.1-py3-none-any.whl (126 kB)
+#9 9.517      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.2/126.2 kB 3.2 MB/s eta 0:00:00
+#9 9.581 Collecting flask==3.1.3 (from -r requirements.lock (line 15))
+#9 9.613   Downloading flask-3.1.3-py3-none-any.whl (103 kB)
+#9 9.621      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 103.4/103.4 kB 29.5 MB/s eta 0:00:00
+#9 9.669 Collecting itsdangerous==2.2.0 (from -r requirements.lock (line 19))
+#9 9.697   Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+#9 9.752 Collecting jinja2==3.1.6 (from -r requirements.lock (line 23))
+#9 9.781   Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+#9 9.792      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 20.3 MB/s eta 0:00:00
+#9 9.960 Collecting markupsafe==3.0.4 (from -r requirements.lock (line 27))
+#9 9.992   Downloading markupsafe-3.0.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+#9 10.06 Collecting werkzeug==3.1.9 (from -r requirements.lock (line 183))
+#9 10.09   Downloading werkzeug-3.1.9-py3-none-any.whl (228 kB)
+#9 10.10      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 228.7/228.7 kB 66.3 MB/s eta 0:00:00
+#9 10.22 Installing collected packages: markupsafe, itsdangerous, click, blinker, werkzeug, jinja2, flask
+#9 10.96 Successfully installed blinker-1.9.0 click-8.5.1 flask-3.1.3 itsdangerous-2.2.0 jinja2-3.1.6 markupsafe-3.0.4 werkzeug-3.1.9
+#9 11.19 
+#9 11.19 [notice] A new release of pip is available: 24.0 -> 26.3
+#9 11.19 [notice] To update, run: python -m pip install --upgrade pip
+#9 11.89 Found existing installation: pip 24.0
+#9 11.99 Uninstalling pip-24.0:
+#9 12.00   Successfully uninstalled pip-24.0
+#9 12.07 Found existing installation: setuptools 79.0.1
+#9 12.13 Uninstalling setuptools-79.0.1:
+#9 12.16   Successfully uninstalled setuptools-79.0.1
+#9 DONE 12.4s
+
+#12 [runtime 3/5] COPY --from=builder /opt/venv /opt/venv
+#12 DONE 0.2s
+
+#13 [runtime 4/5] COPY --chmod=644 app/app.py ./app/app.py
+#13 DONE 0.1s
+
+#14 [runtime 5/5] RUN chmod 755 /app /app/app && chmod 644 /app/app/app.py
+#14 DONE 0.4s
+
+#15 exporting to image
+#15 exporting layers
+#15 exporting layers 1.9s done
+#15 exporting manifest sha256:25309ff0bdd2e4168575625322bc98480c8299b2a9d4b44c0bb09d869cdacd10 0.0s done
+#15 exporting config sha256:7cd5ef8a2a5d03a6c2ecf1a621f26fea6ba28e073e72c575bff5c86aef0175e1 0.0s done
+#15 exporting attestation manifest sha256:007d688e2e5db471b01b2331d52dd8eeebfca62226d8a2edb52f99ae9d188811 0.0s done
+#15 exporting manifest list sha256:30729182aebafd55c4b16774ae654646ee9d33dd1562af5b9557ac57cb0db54c
+#15 exporting manifest list sha256:30729182aebafd55c4b16774ae654646ee9d33dd1562af5b9557ac57cb0db54c 0.0s done
+#15 naming to docker.io/library/ia462-midterm:ci-ready done
+#15 unpacking to docker.io/library/ia462-midterm:ci-ready
+#15 unpacking to docker.io/library/ia462-midterm:ci-ready 0.9s done
+#15 DONE 3.0s

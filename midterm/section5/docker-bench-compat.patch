@@ -1,0 +1,13 @@
+diff --git a/docker-bench-security.sh b/docker-bench-security.sh
+index d4041a8..55f3010 100755
+--- a/docker-bench-security.sh
++++ b/docker-bench-security.sh
+@@ -138,7 +138,7 @@ main () {
+ 
+   # Get the image id of the docker_bench_security_image, memorize it:
+   benchimagecont="nil"
+-  for c in $(docker images | sed '1d' | awk '{print $3}'); do
++  for c in $(docker image ls --quiet); do
+     if docker inspect --format '{{ .Config.Labels }}' "$c" | \
+      grep -e 'docker.bench.security' >/dev/null 2>&1; then
+       benchimagecont="$c"

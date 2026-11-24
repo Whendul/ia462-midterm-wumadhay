@@ -1,0 +1,139 @@
+{
+  "defaultAction": "SCMP_ACT_ERRNO",
+  "defaultErrnoRet": 1,
+  "architectures": [
+    "SCMP_ARCH_X86_64"
+  ],
+  "syscalls": [
+    {
+      "comment": "Observed during startup, GET /, HEAD /, GET /missing, and shutdown in app.strace.",
+      "names": [
+        "accept4",
+        "access",
+        "arch_prctl",
+        "bind",
+        "brk",
+        "close",
+        "connect",
+        "epoll_create1",
+        "epoll_ctl",
+        "epoll_wait",
+        "execve",
+        "exit",
+        "exit_group",
+        "fcntl",
+        "fstat",
+        "futex",
+        "getcwd",
+        "getdents64",
+        "getpid",
+        "getrandom",
+        "getsockname",
+        "gettid",
+        "ioctl",
+        "listen",
+        "lseek",
+        "madvise",
+        "mmap",
+        "mprotect",
+        "mremap",
+        "munmap",
+        "newfstatat",
+        "openat",
+        "poll",
+        "pread64",
+        "prlimit64",
+        "read",
+        "readlink",
+        "readlinkat",
+        "recvfrom",
+        "rseq",
+        "rt_sigaction",
+        "rt_sigprocmask",
+        "rt_sigreturn",
+        "sendto",
+        "set_robust_list",
+        "set_tid_address",
+        "setsockopt",
+        "shutdown",
+        "uname",
+        "write"
+      ],
+      "action": "SCMP_ACT_ALLOW"
+    },
+    {
+      "comment": "Additional read-only identity calls for id/whoami verification, not observed in the app trace.",
+      "names": [
+        "getuid",
+        "geteuid",
+        "getgid",
+        "getegid",
+        "getgroups"
+      ],
+      "action": "SCMP_ACT_ALLOW"
+    },
+    {
+      "comment": "Allow only the thread-creation flags observed in the trace.",
+      "names": [
+        "clone"
+      ],
+      "action": "SCMP_ACT_ALLOW",
+      "args": [
+        {
+          "index": 0,
+          "value": 4001536,
+          "op": "SCMP_CMP_EQ"
+        }
+      ]
+    },
+    {
+      "comment": "Return ENOSYS so thread creation falls back to clone, as observed.",
+      "names": [
+        "clone3"
+      ],
+      "action": "SCMP_ACT_ERRNO",
+      "errnoRet": 38
+    },
+    {
+      "comment": "AF_UNIX sockets observed during name-service checks.",
+      "names": [
+        "socket"
+      ],
+      "action": "SCMP_ACT_ALLOW",
+      "args": [
+        {
+          "index": 0,
+          "value": 1,
+          "op": "SCMP_CMP_EQ"
+        }
+      ]
+    },
+    {
+      "comment": "AF_INET sockets observed during application networking.",
+      "names": [
+        "socket"
+      ],
+      "action": "SCMP_ACT_ALLOW",
+      "args": [
+        {
+          "index": 0,
+          "value": 2,
+          "op": "SCMP_CMP_EQ"
+        }
+      ]
+    },
+    {
+      "comment": "Runtime startup compatibility: descriptor cleanup and filesystem checks. These were not captured in app.strace.",
+      "names": [
+        "close_range",
+        "fstatfs",
+        "openat2",
+        "statx"
+      ],
+      "action": "SCMP_ACT_ALLOW"
+    }
+  ],
+  "flags": [
+    "SECCOMP_FILTER_FLAG_LOG"
+  ]
+}

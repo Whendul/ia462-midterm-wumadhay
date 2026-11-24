@@ -1,0 +1,3 @@
+Nov 23 17:55:22 [REDACTED_HOST] kernel: audit: type=1326 audit(1795474522.900:2): auid=4294967295 uid=999 gid=999 ses=4294967295 subj=kernel pid=13937 comm="id" exe="/usr/bin/id" sig=0 arch=c000003e syscall=137 compat=0 ip=0x78f85e001d17 code=0x50000
+Nov 23 17:55:22 [REDACTED_HOST] kernel: audit: type=1326 audit(1795474522.900:3): auid=4294967295 uid=999 gid=999 ses=4294967295 subj=kernel pid=13937 comm="id" exe="/usr/bin/id" sig=0 arch=c000003e syscall=137 compat=0 ip=0x78f85e001d17 code=0x50000
+Nov 23 17:55:22 [REDACTED_HOST] kernel: audit: type=1326 audit(1795474522.940:4): auid=4294967295 uid=999 gid=999 ses=4294967295 subj=kernel pid=13832 comm="python" exe="/usr/local/bin/python3.11" sig=0 arch=c000003e syscall=435 compat=0 ip=0x7a7335a63529 code=0x50000
