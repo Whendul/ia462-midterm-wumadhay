@@ -1,0 +1,199 @@
+name: Security CI/CD Pipeline
+
+'on':
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: security-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  IMAGE: ia462-midterm:${{ github.sha }}
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    name: Build Docker Image
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Build the pinned image with current Debian patches
+        run: |
+          docker build --pull --no-cache --progress=plain --tag "$IMAGE" midterm
+          docker image inspect "$IMAGE" > image-inspect.json
+          docker save "$IMAGE" --output image.tar
+
+      - name: Share the built image with scan jobs
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: docker-image
+          path: |
+            image.tar
+            image-inspect.json
+          compression-level: 0
+          retention-days: 1
+          if-no-files-found: error
+
+  vulnerability-scan:
+    name: Vulnerability Scan (Trivy)
+    runs-on: ubuntu-24.04
+    needs: build
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Download the image
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: docker-image
+
+      - name: Load the image
+        run: docker load --input image.tar
+
+      - name: Report findings including those without available fixes
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          version: v0.76.2
+          image-ref: ${{ env.IMAGE }}
+          scanners: vuln
+          format: table
+          severity: UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL
+          ignore-unfixed: false
+          exit-code: '0'
+          output: trivy-all-findings.txt
+          timeout: 10m0s
+
+      - name: Block fixable High and Critical vulnerabilities
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          skip-setup-trivy: true
+          image-ref: ${{ env.IMAGE }}
+          scanners: vuln
+          format: table
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          exit-code: '1'
+          output: trivy-results.txt
+          timeout: 10m0s
+
+      - name: Display scan reports
+        if: always()
+        run: |
+          for report in trivy-all-findings.txt trivy-results.txt; do
+            if [ -f "$report" ]; then
+              printf '\n%s\n' "$report"
+              cat "$report"
+            fi
+          done
+
+      - name: Save scan reports even when the gate fails
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: trivy-results
+          path: |
+            trivy-all-findings.txt
+            trivy-results.txt
+          retention-days: 30
+          if-no-files-found: warn
+
+  sbom:
+    name: Generate SBOM (Syft, SPDX)
+    runs-on: ubuntu-24.04
+    needs: build
+    timeout-minutes: 15
+    steps:
+      - name: Download the image
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: docker-image
+
+      - name: Load the image
+        run: docker load --input image.tar
+
+      - name: Install the specified Syft version
+        id: syft
+        uses: anchore/sbom-action/download-syft@66cbf4bc1f1c0d2edc94016e65bc221b6bb0ad6c # v0.24.3
+        with:
+          syft-version: v1.57.2
+
+      - name: Generate SPDX, CycloneDX, and readable inventories
+        env:
+          SYFT_CMD: ${{ steps.syft.outputs.cmd }}
+        run: |
+          "$SYFT_CMD" "docker:$IMAGE" \
+            -o spdx-json=sbom.spdx.json \
+            -o cyclonedx-json=sbom.cdx.json \
+            -o table=sbom.table.txt
+
+      - name: Save the SBOMs
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: sbom
+          path: |
+            sbom.spdx.json
+            sbom.cdx.json
+            sbom.table.txt
+          retention-days: 30
+          if-no-files-found: error
+
+  dependency-audit:
+    name: Python Dependency Audit (pip-audit)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.11'
+
+      - name: Install the audit tool
+        run: python -m pip install --disable-pip-version-check pip-audit==2.10.1
+
+      - name: Audit direct pins and the complete hashed lock
+        working-directory: midterm
+        run: |
+          # Run both audits, retaining the failing status of either command.
+          status=0
+          python -m pip_audit --strict --disable-pip --no-deps \
+            --progress-spinner off -r requirements.txt \
+            > pip-audit-direct.txt 2>&1 || status=1
+          python -m pip_audit --strict --disable-pip --require-hashes \
+            --progress-spinner off -r requirements.lock \
+            > pip-audit-lock.txt 2>&1 || status=1
+          cat pip-audit-direct.txt pip-audit-lock.txt
+          exit "$status"
+
+      - name: Save audit reports even when vulnerabilities are found
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: pip-audit-results
+          path: |
+            midterm/pip-audit-direct.txt
+            midterm/pip-audit-lock.txt
+          retention-days: 30
+          if-no-files-found: warn
